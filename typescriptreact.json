@@ -1,39 +1,23 @@
 {
   "Console Log": {
     "prefix": "cl",
-    "body": [
-      "console.log($1);"
-    ]
+    "body": ["console.log($1);"]
   },
   "React useState": {
     "prefix": "us",
-    "body": [
-      "const [$1, set$2] = useState($3);"
-    ]
+    "body": ["const [$1, set$2] = useState($3);"]
   },
   "React useEffect": {
     "prefix": "ue",
-    "body": [
-      "useEffect(() => {",
-      "  $1",
-      "}, [$2]);"
-    ]
+    "body": ["useEffect(() => {", "  $1", "}, [$2]);"]
   },
   "React useCallback": {
     "prefix": "ucb",
-    "body": [
-      "useCallback(() => {",
-      "  $1",
-      "}, [$2]);"
-    ]
+    "body": ["useCallback(() => {", "  $1", "}, [$2]);"]
   },
   "React useMemo": {
     "prefix": "umm",
-    "body": [
-      "useMemo(() => {",
-      "  $1",
-      "}, [$2]);"
-    ]
+    "body": ["useMemo(() => {", "  $1", "}, [$2]);"]
   },
   "Async React Function Component": {
     "prefix": "arjsfc",
