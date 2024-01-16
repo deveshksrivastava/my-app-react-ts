@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const UseReducer = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default UseReducer
+export default UseReducer;

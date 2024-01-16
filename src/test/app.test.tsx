@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import App from './App';
+import App from '../app';
 
 test('renders and check button text', () => {
   render(<App />);
@@ -17,3 +17,9 @@ test('renders and check button text', () => {
 
   // screen.debug()
 });
+
+// test('renders and check button text', () => {
+//   render(<App />);
+//   const linkElement = screen.getByText(/Submit it!/i);
+//   expect(linkElement).toBeInTheDocument();
+// });

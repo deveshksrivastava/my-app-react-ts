@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import App from './App';
+import App from '../app';
 
 // Mock the fetch function for the test
 
@@ -58,9 +58,7 @@ test('Validation check', async () => {
   const btn1 = screen.getByRole('button', { name: /click me/i });
   expect(btn1).toBeInTheDocument();
   fireEvent.click(btn1);
-  expect(
-    screen.getByRole('button', { name: /click me/i }),
-  ).toHaveBeenCalledTimes(1);
+  expect(screen.getByRole('button', { name: /click me/i })).toHaveBeenCalledTimes(1);
 
   const label1 = screen.queryByText(/2/i);
   expect(label1).toBeInTheDocument();

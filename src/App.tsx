@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useMemo } from 'react';
 import { countries } from './valuable/data/countries';
 // create json object for country state and city data
@@ -61,11 +62,9 @@ export default function App() {
           </option>
         ))}
       </select>
+
     </div>
   );
-}
-
-// create page of country, state, cityz
-const Add = () => {
-  console.log('Do you like your key board');
 };
+
+export default App;

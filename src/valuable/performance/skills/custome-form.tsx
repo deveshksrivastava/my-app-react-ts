@@ -5,9 +5,9 @@ const myJson = [
   {
     name: 'john1',
     email: 'john1@gmail.com',
-    password: '123',
+    password: '123'
   },
-  { name: 'john2', email: 'john2@gmail.com', password: '1231' },
+  { name: 'john2', email: 'john2@gmail.com', password: '1231' }
 ];
 
 function App_interview_form() {
@@ -16,7 +16,7 @@ function App_interview_form() {
   const [values, setValues] = useState({
     name: '',
     email: '',
-    password: '',
+    password: ''
   });
 
   // 1. React.ChangeEvent<HTMLInputElement>
@@ -31,7 +31,7 @@ function App_interview_form() {
 
     setValues(prev => ({
       ...prev,
-      [name]: value,
+      [name]: value
     }));
   };
 
@@ -47,28 +47,11 @@ function App_interview_form() {
     <div className="App">
       <h1>Registratino form</h1>
       Name
-      <input
-        type="text"
-        name="name"
-        value={values.name}
-        onChange={handleChange}
-      />{' '}
-      <br />
+      <input type="text" name="name" value={values.name} onChange={handleChange} /> <br />
       Password:
-      <input
-        type="text"
-        name="password"
-        value={values.password}
-        onChange={handleChange}
-      />
+      <input type="text" name="password" value={values.password} onChange={handleChange} />
       <br />
-      EMail{' '}
-      <input
-        type="text"
-        name="email"
-        value={values.email}
-        onChange={handleChange}
-      />
+      EMail <input type="text" name="email" value={values.email} onChange={handleChange} />
       <br />
       {/* Test{' '}
             <input

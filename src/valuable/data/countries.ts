@@ -6,19 +6,19 @@ export let countries = [
       {
         state: 'Tamil nadu',
 
-        cities: ['Chennai', 'Madurai', 'Coimbatore'],
+        cities: ['Chennai', 'Madurai', 'Coimbatore']
       },
       {
         state: 'Kerala',
 
-        cities: ['Cochin', 'Trivandrum', 'Kozhikode'],
+        cities: ['Cochin', 'Trivandrum', 'Kozhikode']
       },
       {
         state: 'Karnataka',
 
-        cities: ['Bangalore', 'Mysore', 'Mangalore'],
-      },
-    ],
+        cities: ['Bangalore', 'Mysore', 'Mangalore']
+      }
+    ]
   },
   {
     country: 'USA',
@@ -27,19 +27,19 @@ export let countries = [
       {
         state: 'California',
 
-        cities: ['Los Angeles', 'San Diego', 'San Francisco'],
+        cities: ['Los Angeles', 'San Diego', 'San Francisco']
       },
       {
         state: 'Florida',
 
-        cities: ['Miami', 'Orlando', 'Tampa'],
+        cities: ['Miami', 'Orlando', 'Tampa']
       },
       {
         state: 'Texas',
 
-        cities: ['Houston', 'San Antonio', 'Dallas'],
-      },
-    ],
+        cities: ['Houston', 'San Antonio', 'Dallas']
+      }
+    ]
   },
   {
     country: 'Australia',
@@ -48,18 +48,18 @@ export let countries = [
       {
         state: 'New South Wales',
 
-        cities: ['Sydney', 'Newcastle', 'Wollongong'],
+        cities: ['Sydney', 'Newcastle', 'Wollongong']
       },
       {
         state: 'Queensland',
 
-        cities: ['Brisbane', 'Gold Coast', 'Townsville'],
+        cities: ['Brisbane', 'Gold Coast', 'Townsville']
       },
       {
         state: 'Victoria',
 
-        cities: ['Melbourne', 'Geelong', 'Ballarat'],
-      },
-    ],
-  },
+        cities: ['Melbourne', 'Geelong', 'Ballarat']
+      }
+    ]
+  }
 ];

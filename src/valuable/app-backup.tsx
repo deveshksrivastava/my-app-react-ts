@@ -10,9 +10,9 @@ const jsonData = [
   {
     name: 'john1',
     email: 'john1@gmail.com',
-    password: '123',
+    password: '123'
   },
-  { name: 'john2', email: 'john2@gmail.com', password: '1231' },
+  { name: 'john2', email: 'john2@gmail.com', password: '1231' }
 ];
 export default function AppBootstrap() {
   const [values, setValues] = useState({ name: '', email: '', password: '' });
@@ -26,16 +26,14 @@ export default function AppBootstrap() {
     setValues({
       name: '',
       password: '',
-      email: '',
+      email: ''
     });
   };
 
   const handleOnChaged = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.name === 'email') {
       const search = [...jsonData];
-      const found = search.filter(item =>
-        item.email.toLowerCase().includes('john1'),
-      );
+      const found = search.filter(item => item.email.toLowerCase().includes('john1'));
       console.log(search);
       console.log(found);
     }
@@ -52,12 +50,7 @@ export default function AppBootstrap() {
           <label htmlFor="exampleInputEmail1" className="form-label">
             Email address
           </label>
-          <input
-            type="email"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
+          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
           </div>
@@ -66,11 +59,7 @@ export default function AppBootstrap() {
           <label htmlFor="exampleInputPassword1" className="form-label">
             Password
           </label>
-          <input
-            type="password"
-            className="form-control"
-            id="exampleInputPassword1"
-          />
+          <input type="password" className="form-control" id="exampleInputPassword1" />
         </div>
         <form>
           <div className="form-group row">
@@ -91,12 +80,7 @@ export default function AppBootstrap() {
               Password
             </label>
             <div className="col-sm-10">
-              <input
-                type="password"
-                className="form-control"
-                id="inputPassword3"
-                placeholder="Password"
-              />
+              <input type="password" className="form-control" id="inputPassword3" placeholder="Password" />
             </div>
           </div>
           <fieldset className="form-group">
@@ -117,13 +101,7 @@ export default function AppBootstrap() {
                   </label>
                 </div>
                 <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="gridRadios"
-                    id="gridRadios2"
-                    value="option2"
-                  />
+                  <input className="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" />
                   <label className="form-check-label" htmlFor="gridRadios2">
                     Second radio
                   </label>
@@ -148,11 +126,7 @@ export default function AppBootstrap() {
             <div className="col-sm-2">Checkbox</div>
             <div className="col-sm-10">
               <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="gridCheck1"
-                />
+                <input className="form-check-input" type="checkbox" id="gridCheck1" />
                 <label className="form-check-label" htmlFor="gridCheck1">
                   Example checkbox
                 </label>
