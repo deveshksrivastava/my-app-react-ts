@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const UseCallback = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default UseCallback
+export default UseCallback;

@@ -22,7 +22,11 @@ const InterviewCountryState: React.FC = () => {
       <h1>Country, State, and City Selection</h1>
 
       <label htmlFor="country">Country:</label>
-      <select id="country" value={selectedCountry} onChange={handleCountryChange}>
+      <select
+        id="country"
+        value={selectedCountry}
+        onChange={handleCountryChange}
+      >
         <option value="">Select a country</option>
         {/* Add your country options here */}
       </select>

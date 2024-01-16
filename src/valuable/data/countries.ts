@@ -1,65 +1,65 @@
 export let countries = [
-    {
-        country: 'India',
+  {
+    country: 'India',
 
-        states: [
-            {
-                state: 'Tamil nadu',
+    states: [
+      {
+        state: 'Tamil nadu',
 
-                cities: ['Chennai', 'Madurai', 'Coimbatore'],
-            },
-            {
-                state: 'Kerala',
+        cities: ['Chennai', 'Madurai', 'Coimbatore'],
+      },
+      {
+        state: 'Kerala',
 
-                cities: ['Cochin', 'Trivandrum', 'Kozhikode'],
-            },
-            {
-                state: 'Karnataka',
+        cities: ['Cochin', 'Trivandrum', 'Kozhikode'],
+      },
+      {
+        state: 'Karnataka',
 
-                cities: ['Bangalore', 'Mysore', 'Mangalore'],
-            },
-        ],
-    },
-    {
-        country: 'USA',
+        cities: ['Bangalore', 'Mysore', 'Mangalore'],
+      },
+    ],
+  },
+  {
+    country: 'USA',
 
-        states: [
-            {
-                state: 'California',
+    states: [
+      {
+        state: 'California',
 
-                cities: ['Los Angeles', 'San Diego', 'San Francisco'],
-            },
-            {
-                state: 'Florida',
+        cities: ['Los Angeles', 'San Diego', 'San Francisco'],
+      },
+      {
+        state: 'Florida',
 
-                cities: ['Miami', 'Orlando', 'Tampa'],
-            },
-            {
-                state: 'Texas',
+        cities: ['Miami', 'Orlando', 'Tampa'],
+      },
+      {
+        state: 'Texas',
 
-                cities: ['Houston', 'San Antonio', 'Dallas'],
-            },
-        ],
-    },
-    {
-        country: 'Australia',
+        cities: ['Houston', 'San Antonio', 'Dallas'],
+      },
+    ],
+  },
+  {
+    country: 'Australia',
 
-        states: [
-            {
-                state: 'New South Wales',
+    states: [
+      {
+        state: 'New South Wales',
 
-                cities: ['Sydney', 'Newcastle', 'Wollongong'],
-            },
-            {
-                state: 'Queensland',
+        cities: ['Sydney', 'Newcastle', 'Wollongong'],
+      },
+      {
+        state: 'Queensland',
 
-                cities: ['Brisbane', 'Gold Coast', 'Townsville'],
-            },
-            {
-                state: 'Victoria',
+        cities: ['Brisbane', 'Gold Coast', 'Townsville'],
+      },
+      {
+        state: 'Victoria',
 
-                cities: ['Melbourne', 'Geelong', 'Ballarat'],
-            },
-        ],
-    },
-]
+        cities: ['Melbourne', 'Geelong', 'Ballarat'],
+      },
+    ],
+  },
+];
