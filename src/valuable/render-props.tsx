@@ -55,11 +55,7 @@ const RenderPropsComplex = () => {
   return (
     <div>
       <h2>Render Props</h2>
-      <CatComplex
-        name="Whiskers"
-        city="Catland"
-        render={(name, city) => <MeowComplex name={name} city={city} />}
-      />
+      <CatComplex name="Whiskers" city="Catland" render={(name, city) => <MeowComplex name={name} city={city} />} />
     </div>
   );
 };

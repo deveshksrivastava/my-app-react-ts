@@ -42,11 +42,7 @@ export const AppDebouncing = () => {
   return (
     <div>
       {email}
-      <input
-        type="text"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-      />
+      <input type="text" value={email} onChange={e => setEmail(e.target.value)} />
     </div>
   );
 };

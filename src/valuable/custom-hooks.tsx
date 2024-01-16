@@ -26,10 +26,7 @@ const useCountNumber = (num: number, id: string) => {
 
 const CustomHooks = () => {
   const [id, setId] = useState('');
-  const { incrementHandler, decrementHandler, count, data } = useCountNumber(
-    0,
-    id,
-  );
+  const { incrementHandler, decrementHandler, count, data } = useCountNumber(0, id);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setId(event.target.value);

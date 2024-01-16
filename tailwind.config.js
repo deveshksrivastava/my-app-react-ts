@@ -7,12 +7,12 @@ module.exports = {
       colors: {
         'custom-blue': '#1DA1F2',
         'custom-green': '#17BF63',
-        'custom-red': '#E0245E',
-      },
-    },
+        'custom-red': '#E0245E'
+      }
+    }
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 };

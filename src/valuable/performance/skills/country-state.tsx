@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { countries } from './../valuable/data/countries';
+import { countries } from '../../data/countries';
 // create json object for country state and city data
 
 export default function App() {
@@ -9,9 +9,7 @@ export default function App() {
   const [selectedCity, setselectedCity] = useState('');
 
   const handleCountryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newArr = countryList.filter(
-      item => item.country === event.target.value,
-    );
+    const newArr = countryList.filter(item => item.country === event.target.value);
     setCountryList(newArr);
   };
 
@@ -28,23 +26,13 @@ export default function App() {
   };
   return (
     <div>
-      <select
-        name="country"
-        id="country"
-        value={selectedCountry}
-        onChange={handleCountryChange}
-      >
+      <select name="country" id="country" value={selectedCountry} onChange={handleCountryChange}>
         <option value="India">--country--</option>
         {countryList.map(item => {
           return <option value={item.country}>{item.country}</option>;
         })}
       </select>
-      <select
-        name="state"
-        id="state"
-        value={selectedState}
-        onChange={handleStateChange}
-      >
+      <select name="state" id="state" value={selectedState} onChange={handleStateChange}>
         <option value="India">--state--</option>
         {countryList.map(item => {
           return (

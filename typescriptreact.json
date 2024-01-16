@@ -21,13 +21,7 @@
   },
   "Async React Function Component": {
     "prefix": "arjsfc",
-    "body": [
-      "const $1 = async () => {",
-      "  return $2;",
-      "};",
-      "",
-      "export default $1;"
-    ]
+    "body": ["const $1 = async () => {", "  return $2;", "};", "", "export default $1;"]
   },
   "Async React Function Component with Props": {
     "prefix": "arjsfcp",
@@ -43,13 +37,7 @@
   },
   "React Function Component": {
     "prefix": "rjsfc",
-    "body": [
-      "const $1 = () => {",
-      "  return $2;",
-      "};",
-      "",
-      "export default $1;"
-    ]
+    "body": ["const $1 = () => {", "  return $2;", "};", "", "export default $1;"]
   },
   "React Function Component with Props": {
     "prefix": "rjsfcp",
