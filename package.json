@@ -11,8 +11,12 @@
     "@types/react": "^18.2.46",
     "@types/react-dom": "^18.2.18",
     "bootstrap": "^5.3.2",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "lint": "^0.8.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.2",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
@@ -21,7 +25,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier .",
+    "format": "npm run prettier -- --write",
+    "eslint": "eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +50,6 @@
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.10",
-    "prettier": "3.1.1"
+    "prettier": "^3.2.2"
   }
 }

@@ -1,0 +1,35 @@
+{
+  "extends": ["eslint:recommended", "react-app", "react-app/jest", "prettier"],
+
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "no-console": "off",
+    "strict": ["error", "global"],
+    "curly": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["docusaurus/website/src/**/*.js", "test/fixtures/*/src/*.js"],
+      "excludedFiles": ["packages/react-error-overlay/*.js"],
+      "extends": ["react-app", "react-app/jest"]
+    },
+    {
+      "files": [
+        "test/fixtures/webpack-message-formatting/src/{AppLintError,AppLintWarning,AppUnknownFile}.js"
+      ],
+      "rules": {
+        "no-unused-vars": "off",
+        "no-undef": "off"
+      }
+    }
+  ]
+}
