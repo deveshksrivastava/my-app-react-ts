@@ -7,22 +7,21 @@ const Header = () => {
       <div className="flex items-start max-w-7xl px-2 py-2">
         <img src="/asserts/img/logo.png" className="w-20" alt="Logo" />
       </div>
-      <div className="flex bg-red-400  justify-center items-center">
+      <div className="flex bg-blue-400  justify-center items-center">
         <ul className="flex gap-4 no-underline ">
           <li className="text-white  p-2 ">
-            {/* // please find the bug */}
-            {/* <Link to="/service">Home</Link> */}
+            <Link to="/">Home</Link>
             {/* <Link to="/about">Login</Link> */}
           </li>
-          {/* <li className="text-white  p-2 ">
-            <Link to={'/service/'}>Service</Link>
+          <li className="text-white  p-2 ">
+            <Link to="/service">Service</Link>
           </li>
           <li className="text-white  p-2 ">
-            <Link to={'/service/'}>Help</Link>
+            <Link to="/help">Help</Link>
           </li>
           <li className="text-white  p-2 ">
-            <Link to={'/service/'}>Contact Us</Link>
-          </li> */}
+            <Link to="/contact">Contact Us</Link>
+          </li>
         </ul>
       </div>
 
