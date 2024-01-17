@@ -1,68 +1,51 @@
-import React, { useState } from 'react';
-import { countries } from '../../data/countries';
+import React, { useEffect, useState, useMemo } from 'react';
+import { countries } from './../../data/countries';
 // create json object for country state and city data
 
 export default function App() {
-  const [countryList, setCountryList] = useState(countries);
-  const [selectedCountry, setSelectedCountry] = useState('');
-  const [selectedState, setSelectedState] = useState('');
-  const [selectedCity, setselectedCity] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState<string>('');
+  const [selectedState, setSelectedState] = useState<string>('');
+  // const countries=[...countries];
 
-  const handleCountryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newArr = countryList.filter(item => item.country === event.target.value);
-    setCountryList(newArr);
+  const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCountry(e.target.value);
+    setSelectedState(''); // Reset state when country changes
   };
 
-  // how to add two number
+  const fetchstate = countries.find(country => country.country === selectedCountry);
+  const fetchcity = fetchstate?.states.find(state => state.state === selectedState);
 
-  const handleStateChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log('state :', event.target.value);
-    const newArr = countryList.filter(item => {
-      item.states.filter(item => item.state === event.target.value);
-    });
-    console.log('state :', newArr);
-    setCountryList(newArr);
-    // setSelectedState(event.target.value)
+  const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedState(e.target.value);
   };
   return (
-    <div>
+    <div className="text-center m-4">
       <select name="country" id="country" value={selectedCountry} onChange={handleCountryChange}>
-        <option value="India">--country--</option>
-        {countryList.map(item => {
-          return <option value={item.country}>{item.country}</option>;
-        })}
+        <option value="">--country--</option>
+        {countries.map(item => (
+          <option key={item.country} value={item.country}>
+            {item.country}
+          </option>
+        ))}
       </select>
+
       <select name="state" id="state" value={selectedState} onChange={handleStateChange}>
-        <option value="India">--state--</option>
-        {countryList.map(item => {
-          return (
-            <>
-              {item.states.map(state => {
-                return <option value={state.state}>{state.state}</option>;
-              })}
-            </>
-          );
-        })}
+        <option value="">--state--</option>
+        {fetchstate?.states.map(state => (
+          <option key={state.state} value={state.state}>
+            {state.state}
+          </option>
+        ))}
       </select>
+
       <select name="city" id="city">
-        <option value="India">--city--</option>
-        {countryList.map(item => {
-          return (
-            <>
-              {item.states.map(state => {
-                return (
-                  <>
-                    {state.cities.map(city => {
-                      return <option value="city">{city}</option>;
-                    })}
-                  </>
-                );
-              })}
-            </>
-          );
-        })}
+        <option value="">--city--</option>
+        {fetchcity?.cities.map((city: string) => (
+          <option key={city} value={city}>
+            {city}
+          </option>
+        ))}
       </select>
-      {JSON.stringify(countries)}
     </div>
   );
 }
