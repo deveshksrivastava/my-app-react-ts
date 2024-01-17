@@ -1,10 +1,14 @@
 <!-- es-lint config working -->
 
-## Helper commands:
+## Setup of the react typescript project
+
+- `Install node.js` and npm install
+- `npm install -g create-react-app` @ global level
+- `npx create-react-app my-app --template typescript` install typescript- Project
+- `cd my-app`
+- `npm start` - run application
 
 #### :nail_care: Enhancement
-
-`npm start`
 
 ## Step to create eslint
 

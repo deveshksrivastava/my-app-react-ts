@@ -12,7 +12,7 @@ const Header = () => {
           <li className="text-white  p-2 ">
             {/* // please find the bug */}
             {/* <Link to="/service">Home</Link> */}
-            <Link to="/about">Login</Link>
+            {/* <Link to="/about">Login</Link> */}
           </li>
           {/* <li className="text-white  p-2 ">
             <Link to={'/service/'}>Service</Link>
