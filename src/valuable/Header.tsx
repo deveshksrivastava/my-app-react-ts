@@ -11,7 +11,6 @@ const Header = () => {
         <ul className="flex gap-4 no-underline ">
           <li className="text-white  p-2 ">
             <Link to="/">Home</Link>
-            {/* <Link to="/about">Login</Link> */}
           </li>
           <li className="text-white  p-2 ">
             <Link to="/service">Service</Link>
@@ -25,18 +24,6 @@ const Header = () => {
         </ul>
       </div>
 
-      {/* <div className="bg-pink-50">
-        <ul className="flex p-4 m-4">
-          <li className="mr-4">
-            <a href="/">Home</a>
-          </li>
-          <li className="mr-4">
-            <a href="/about">Request Us</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
-        </ul> */}
     </div>
   );
 };
