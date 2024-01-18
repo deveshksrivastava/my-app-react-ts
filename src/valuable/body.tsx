@@ -6,7 +6,7 @@ const Body = () => {
       <div className={`h-60 bg-banner-logo  relative  w-300  bg-center `}></div>
 
       <div className=" text-white  flex items-center justify-center m-auto">
-        <div className="absolute mb-60  justify-center backdrop-sepia-0 bg-white/10 p-2  text-xl rounded  ">
+        <div className="absolute mb-60 items-center justify-center backdrop-sepia-0 bg-white/10 p-2 w-[580px]  text-xl rounded  ">
           Welcome to National Grid SEO Data & Analystics Plateform
         </div>
       </div>
