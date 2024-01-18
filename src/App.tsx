@@ -1,5 +1,9 @@
-import React from 'react';
-import Header from './valuable/header';
-export default function App() {
-  return <div className="app">{/* <Header /> */}</div>;
+import React from 'react'
+
+const App = () => {
+  return (
+    <div>App</div>
+  )
 }
+
+export default App;

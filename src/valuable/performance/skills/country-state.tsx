@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { countries } from './../../data/countries';
+import { countries } from '../../data/countries';
 // create json object for country state and city data
 
 export default function App() {
