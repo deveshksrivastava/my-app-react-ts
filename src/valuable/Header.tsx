@@ -33,7 +33,8 @@ const Header = () => {
             </li>
           ))}
         </ul>
-      </div>
+        </div>
+
       <div>
         <nav className="flex" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
