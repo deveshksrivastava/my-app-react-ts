@@ -25,6 +25,7 @@ const Header = () => {
       <div className="flex items-start max-w-7xl px-2 py-2">
         <img src="/asserts/img/logo.png" className="w-20" alt="Logo" />
       </div>
+
       <div className=" flex bg-red-400 px-2 py-2  justify-center items-center" id="navbar">
         <ul className="flex md:p-0 md:flex-row md:space-x-8 mt-0 mb-[3px] ">
           {navLinks.map((link, index) => (
@@ -33,7 +34,8 @@ const Header = () => {
             </li>
           ))}
         </ul>
-      </div>
+        </div>
+
       <div>
         <nav className="flex" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
