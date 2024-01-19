@@ -13,15 +13,19 @@ import Contact from './valuable/contact';
 import Services from './valuable/service';
 import Help from './valuable/help';
 import Footer from './valuable/footer';
+import Breadcrumbs from './valuable/pages/breadcrums';
 
 const AppLayout = () => {
   return (
     <>
       <Router>
         <Header />
+        <Breadcrumbs />
         <Routes>
+          <Route path="/home" element={<Body />} />
           <Route path="/" element={<Body />} />
-          <Route path="/service" element={<Services />} />
+          {/* <Route path="/service" element={<Services />} /> */}
+          <Route path="/service/:name" element={<Services />} />
           <Route path="/help" element={<Help />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Error />} />

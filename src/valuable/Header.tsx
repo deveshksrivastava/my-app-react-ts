@@ -1,25 +1,78 @@
 import { Link } from 'react-router-dom';
 
 import NavLinkTag from './pages/nav-link';
-const navLinks = [
+// const navLinks = [
+//   {
+//     title: 'Home',
+//     path: '/'
+//   },
+//   {
+//     title: 'Service',
+//     path: '/service'
+//   },
+//   {
+//     title: 'Help',
+//     path: '/help'
+//   },
+//   {
+//     title: 'Contact Us',
+//     path: '/contact'
+//   }
+// ];
+
+interface NavLinkProps {
+  path: string;
+  title: string;
+  dropdown?: NavLinkProps[];
+}
+const navLinks:NavLinkProps[] = [
   {
     title: 'Home',
-    path: '/'
+    path: '/',
+    dropdown:undefined,
   },
   {
     title: 'Service',
-    path: '/service'
+    path: '#',
+    dropdown: [
+      {
+        title: 'Request Advanced Analytics Enviornment',
+        path: '/service/request-advanced-analytics-enviornment'
+      },
+      {
+        title: 'Request Data Upload',
+        path: '/service/request-data-update',
+      }
+    ]
   },
   {
     title: 'Help',
-    path: '/help'
+    path: '#',
+    dropdown: [
+      {
+        title: 'About DAP',
+        path: '/help/about-dap'
+      },
+      {
+        title: 'Report a DAP issue',
+        path: '/help/request-a-dap-issue'
+      },
+      {
+        title: 'FAQS',
+        path: '/help/faqs'
+      }
+    ]
   },
   {
     title: 'Contact Us',
-    path: '/contact'
+    path: '/contact',
+    dropdown: undefined,
   }
 ];
 const Header = () => {
+
+
+
   return (
     <div className=" justify-between bg-slate-100 shadow-md h-15 ">
       <div className="flex items-start max-w-7xl px-2 py-2">
@@ -29,14 +82,14 @@ const Header = () => {
         <ul className="flex md:p-0 md:flex-row md:space-x-8 mt-0 mb-[3px] ">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <NavLinkTag href={link.path} title={link.title} />
+              <NavLinkTag  title={link.title} path={link.path} dropdown={link.dropdown} />
             </li>
           ))}
         </ul>
         </div>
 
       <div>
-        <nav className="flex" aria-label="Breadcrumb">
+        {/* <nav className="flex" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
             <li className="inline-flex items-center">
               <a
@@ -101,7 +154,7 @@ const Header = () => {
               </div>
             </li>
           </ol>
-        </nav>
+        </nav> */}
       </div>
     </div>
   );
