@@ -3,6 +3,7 @@ import logo from '../images/file_files.png';
 const Body = () => {
   return (
     <div className="w-full min-h-screen ">
+
       <div className={`h-60 bg-banner-logo  relative  w-300  bg-center `}></div>
 
       <div className="max-w-3xl  m-auto relative ">
@@ -35,6 +36,10 @@ const Body = () => {
               <p>For Requesting AEE that enables you to enable AI</p>
             </div>
           </div>
+
+        </div>
+        <div>
+          <h2> For any Queries or feedback please contact <span> box.DAPmanagers@nationalgrideso.com </span></h2>
         </div>
       </div>
       <div className=" bg-[#f5d5d3] w-full text-center pb-3 border-b  border-gray-500 ">
