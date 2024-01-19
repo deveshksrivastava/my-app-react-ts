@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import NavLinkTag from './pages/nav-link';
 const navLinks = [
   {
     title: 'Home',
@@ -43,7 +42,7 @@ const Footer = () => {
               >
                 {link.title}
               </NavLink>
-              <NavLinkTag href={link.path} title={link.title} />
+             
             </li>
           ))}
         </ul>
