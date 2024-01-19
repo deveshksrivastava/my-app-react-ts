@@ -1,28 +1,36 @@
 import React, { useState } from 'react';
 
-const Contact = () => {
+const Contact =() => {
+  
   return (
-    <div>
+    <div className='min-h-screen'>
+      <div className=" bg-[#e3dfdf] w-full text-center pb-3  ">
+        <h2 className="py-5 font-bold">
+          Do you want to get in touch with us ? feel free to email us at 
+          <span className="text-[#82302b] underline ml-2">.box.DAPmanagers@nationalgrideso.com </span>
+        </h2>
+      </div>
       Contact phage
       <Modal />
+      
     </div>
   );
 };
 
 export default Contact;
 
+
 const Modal = () => {
+  
   const [isOpen, setIsOpen] = useState(false);
-
-  const closeModal = () => setIsOpen(false);
-  const openModal = () => setIsOpen(true);
-
   const [isOpenHealth, setIsOpenHealth] = useState(false);
   const openModalhealth = () => setIsOpenHealth(true);
   const closeModalHealth = () => setIsOpenHealth(false);
-
+  const closeModal = () => setIsOpen(false);
+  const openModal = () => setIsOpen(true);
   return (
-    <div className='min-h-screen'>
+    <>
+       
       <button onClick={openModal} className="px-4 py-2 bg-blue-500 text-white rounded">
         Open Modal
       </button>
@@ -30,21 +38,18 @@ const Modal = () => {
       <button onClick={openModalhealth} className="px-4 py-2 bg-blue-500 text-white rounded">
         Open Modal for Helath
       </button>
-      {isOpen && (
+     
+    {isOpen && (
         <div
-          className="fixed z-10 inset-0 overflow-y-auto buttom"
+          className="fixed z-10 inset-0 overflow-y-auto"
           aria-labelledby="modal-title"
           role="dialog"
           aria-modal="true"
         >
-          <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+          <div className="flex items-center justify-center min-h-screen">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
 
-            <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
-              &#8203;
-            </span>
-
-            <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+            <div className="bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
               <button type="button" className="absolute top-0 right-4" onClick={closeModal}>
                 x
               </button>
@@ -55,17 +60,17 @@ const Modal = () => {
                       You are being redirected.
                     </h3>
 
-                    <div className="mt-2 py-3 ">
+                    <div className="mt-2 py-3">
                       <p className="text-sm text-gray-500">
-                        ANC IT Page will open in new trbal to report an issu relate to NHS..
+                        ANC IT Page will open in a new tab to report an issue related to NHS.
                       </p>
-                      {/* <div className="leading"></div> */}
-                      <p className="text-sm text-gray-500 text-left">Do you wnat to continue?</p>
+                      <div className="leading"></div>
+                      <p className="text-sm text-gray-500 text-left">Do you want to continue?</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="bg-slate-300 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse ">
+              <div className="bg-slate-300 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
                   type="button"
                   className="w-64 inline-flex items-center justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-orange-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
@@ -84,7 +89,7 @@ const Modal = () => {
                 </button>
                 <button
                   type="button"
-                  className="mt-3 w-full inline-flex justify-center  px-4 py-2 underline text-base font-medium text-gray-700  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
+                  className="mt-3 w-full inline-flex justify-center px-4 py-2 underline text-base font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
                   onClick={closeModal}
                 >
                   Close
@@ -94,20 +99,16 @@ const Modal = () => {
           </div>
         </div>
       )}
-
+ 
       {isOpenHealth && (
         <div
-          className="fixed z-10 inset-0 overflow-y-auto buttom"
+          className="fixed z-10 inset-0 overflow-y-auto"
           aria-labelledby="modal-title"
           role="dialog"
           aria-modal="true"
         >
-          <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+          <div className="flex items-center justify-center min-h-screen">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-
-            <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
-              &#8203;
-            </span>
 
             <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
               <button type="button" className="absolute top-0 right-4" onClick={closeModalHealth}>
@@ -117,7 +118,7 @@ const Modal = () => {
                 <div className="sm:flex ">
                   <div className="mt-3  sm:mt-0 sm:ml-4 ">
                     <h3 className="text-lg  leading-6 font-medium text-[#000000] text-center py-3" id="modal-title">
-                      how to imporve your health in your life?
+                      How to improve your health in your life?
                     </h3>
                     <div>Hygiene and Preventive Measures:</div>
                     <ul className="list-disc list-inside">
@@ -161,6 +162,6 @@ const Modal = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
