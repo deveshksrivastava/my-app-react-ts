@@ -22,7 +22,7 @@ const Modal = () => {
   const closeModalHealth = () => setIsOpenHealth(false);
 
   return (
-    <div>
+    <div className='min-h-screen'>
       <button onClick={openModal} className="px-4 py-2 bg-blue-500 text-white rounded">
         Open Modal
       </button>

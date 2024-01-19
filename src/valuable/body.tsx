@@ -2,15 +2,15 @@ import React from 'react';
 import logo from '../images/file_files.png';
 const Body = () => {
   return (
-    <div className="z-0 w-full min-h-screen">
+    <div className="w-full min-h-screen ">
       <div className={`h-60 bg-banner-logo  relative  w-300  bg-center `}></div>
 
-      <div className=" text-white  flex items-center justify-center m-auto">
-        <div className="absolute mb-60 items-center justify-center backdrop-sepia-0 bg-white/10 p-2 w-[580px]  text-xl rounded  ">
-          Welcome to National Grid SEO Data & Analystics Plateform
-        </div>
-      </div>
       <div className="max-w-3xl  m-auto relative ">
+        <div className=" text-white  flex items-center justify-center ">
+          <div className=" absolute mb-60 text-center font-extrabold p-1  backdrop-sepia-1 bg-white/10  w-full  text-2xl rounded ">
+            Welcome to National Grid SEO Data & Analystics Plateform
+          </div>
+        </div>
         <div className="flex items-center  justify-center ">
           <div className="absolute  justify-center w-full bg-white  max-w-3xl  p-10 mb-10 text-center">
             <h1 className="text-2xl font-bold  ">Accelerate Your Data & Analytics Process</h1>
@@ -26,7 +26,7 @@ const Body = () => {
               <p>For Requesting AEE that enables you to enable AI</p>
             </div>
           </div>
-          <div className="flex py-5 mt-2 text-center border-b gap-5 items-center border-gray-500 ">
+          <div className="flex py-5 mt-2 text-center  gap-5 items-center  ">
             <span className="ml-4">
               <img src={logo} alt="logo" />
             </span>
@@ -35,11 +35,13 @@ const Body = () => {
               <p>For Requesting AEE that enables you to enable AI</p>
             </div>
           </div>
-
         </div>
-        <div>
-          <h2> For any Queries or feedback please contact <span> box.DAPmanagers@nationalgrideso.com </span></h2>
-        </div>
+      </div>
+      <div className=" bg-[#f5d5d3] w-full text-center pb-3 border-b  border-gray-500 ">
+        <h2 className="py-3 font-bold">
+          For any Queries or feedback please contact
+          <span className="text-[#82302b]"> box.DAPmanagers@nationalgrideso.com </span>
+        </h2>
       </div>
     </div>
   );
