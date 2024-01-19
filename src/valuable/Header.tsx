@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import NavLinkTag from '../Component/Pages/NavLink';
+import NavLinkTag from './pages/nav-link';
 const navLinks = [
   {
     title: 'Home',
