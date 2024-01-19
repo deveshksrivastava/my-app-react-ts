@@ -20,7 +20,7 @@ const AppLayout = () => {
     <>
       <Router>
         <Header />
-        <Breadcrumbs />
+       
         <Routes>
           <Route path="/home" element={<Body />} />
           <Route path="/" element={<Body />} />

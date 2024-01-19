@@ -10,7 +10,7 @@ const Body = () => {
       <div className="max-w-3xl  m-auto relative ">
         <div className=" text-white  flex items-center justify-center ">
           <div className=" absolute mb-60 text-center font-extrabold p-1  backdrop-sepia-1 bg-white/10  w-full  text-2xl rounded ">
-            Welcome to National Grid SEO Data & Analystics Plateform
+            Welcome to Grid SEO Data & Analystics Plateform
           </div>
         </div>
         <div className="flex items-center  justify-center ">
@@ -41,12 +41,7 @@ const Body = () => {
         </div>
       
       </div>
-      <div className=" bg-[#f5d5d3] w-full text-center pb-3 border-b  border-gray-500 ">
-        <h2 className="py-3 font-bold">
-          For any Queries or feedback please contact
-          <span className="text-[#82302b]"> box.DAPmanagers@nationalgrideso.com </span>
-        </h2>
-      </div>
+
     </div>
   );
 };
