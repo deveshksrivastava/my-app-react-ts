@@ -42,7 +42,6 @@ const Footer = () => {
               >
                 {link.title}
               </NavLink>
-             
             </li>
           ))}
         </ul>
