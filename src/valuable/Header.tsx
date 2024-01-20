@@ -25,11 +25,11 @@ interface NavLinkProps {
   title: string;
   dropdown?: NavLinkProps[];
 }
-const navLinks:NavLinkProps[] = [
+const navLinks: NavLinkProps[] = [
   {
     title: 'Home',
     path: '/',
-    dropdown:undefined,
+    dropdown: undefined
   },
   {
     title: 'Service',
@@ -41,7 +41,7 @@ const navLinks:NavLinkProps[] = [
       },
       {
         title: 'Request Data Upload',
-        path: '/service/request-data-update',
+        path: '/service/request-data-update'
       }
     ]
   },
@@ -66,27 +66,24 @@ const navLinks:NavLinkProps[] = [
   {
     title: 'Contact Us',
     path: '/contact',
-    dropdown: undefined,
+    dropdown: undefined
   }
 ];
 const Header = () => {
-
-
-
   return (
     <div className=" justify-between bg-slate-100 shadow-md h-15 ">
       <div className="flex items-start max-w-7xl px-2 py-2">
-        <img src="/asserts/img/logo.png" className="w-20" alt="Logo" />
+        <img src="/asserts/img/mso-gap.png" className="w-40" alt="Logo" />
       </div>
-      <div className=" flex bg-red-400 px-2 py-2  justify-center items-center" id="navbar">
+      <div className=" flex bg-site-color px-2 py-2  justify-center items-center" id="navbar">
         <ul className="flex md:p-0 md:flex-row md:space-x-8 mt-0 mb-[3px] ">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <NavLinkTag  title={link.title} path={link.path} dropdown={link.dropdown} />
+              <NavLinkTag title={link.title} path={link.path} dropdown={link.dropdown} />
             </li>
           ))}
         </ul>
-        </div>
+      </div>
 
       <div>
         {/* <nav className="flex" aria-label="Breadcrumb">

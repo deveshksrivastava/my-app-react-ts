@@ -1,27 +1,23 @@
 import React, { useState } from 'react';
 
-const Contact =() => {
-  
+const Contact = () => {
   return (
-    <div className='min-h-screen'>
+    <div className="min-h-screen">
       <div className=" bg-[#e3dfdf] w-full text-center pb-3  ">
         <h2 className="py-5 font-bold">
-          Do you want to get in touch with us ? feel free to email us at 
+          Do you want to get in touch with us ? feel free to email us at
           <span className="text-[#82302b] underline ml-2">.box.DAPmanagers@nationalgrideso.com </span>
         </h2>
       </div>
       Contact phage
       <Modal />
-      
     </div>
   );
 };
 
 export default Contact;
 
-
 const Modal = () => {
-  
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenHealth, setIsOpenHealth] = useState(false);
   const openModalhealth = () => setIsOpenHealth(true);
@@ -30,7 +26,6 @@ const Modal = () => {
   const openModal = () => setIsOpen(true);
   return (
     <>
-       
       <button onClick={openModal} className="px-4 py-2 bg-blue-500 text-white rounded">
         Open Modal
       </button>
@@ -38,8 +33,8 @@ const Modal = () => {
       <button onClick={openModalhealth} className="px-4 py-2 bg-blue-500 text-white rounded">
         Open Modal for Helath
       </button>
-     
-    {isOpen && (
+
+      {isOpen && (
         <div
           className="fixed z-10 inset-0 overflow-y-auto"
           aria-labelledby="modal-title"
@@ -73,7 +68,7 @@ const Modal = () => {
               <div className="bg-slate-300 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
                   type="button"
-                  className="w-64 inline-flex items-center justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-orange-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
+                  className="w-64 inline-flex items-center justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-site-color text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
                   onClick={closeModal}
                 >
                   Proceed
@@ -99,7 +94,7 @@ const Modal = () => {
           </div>
         </div>
       )}
- 
+
       {isOpenHealth && (
         <div
           className="fixed z-10 inset-0 overflow-y-auto"
