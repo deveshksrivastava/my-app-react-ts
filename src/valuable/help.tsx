@@ -1,9 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import Banner from './pages/banner';
 import Breadcrumbs from './pages/breadcrums';
-// interface AppProps {
-//   bannerPath: string;
-// }
+
 const Help = () => {
   const location=useLocation()
   const pathname = location.pathname.split('/').filter(x => x);

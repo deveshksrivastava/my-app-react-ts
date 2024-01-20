@@ -3,6 +3,7 @@ import Breadcrumbs from './pages/breadcrums';
 import { useLocation } from 'react-router-dom';
 import ServiceBanner from './pages/servicebanner';
 
+
 const Services = () => {
   const location=useLocation()
   const pathname = location.pathname.split('/').filter(x => x);
