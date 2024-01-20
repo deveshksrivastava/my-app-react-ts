@@ -6,7 +6,7 @@ import './index.css';
 import './index.css';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './valuable/header';
+
 import Body from './valuable/body';
 import Error from './valuable/my-error';
 import Contact from './valuable/contact';
@@ -14,13 +14,13 @@ import Services from './valuable/service';
 import Help from './valuable/help';
 import Footer from './valuable/footer';
 import Breadcrumbs from './valuable/pages/breadcrums';
+import Header from './valuable/header';
 
 const AppLayout = () => {
   return (
     <>
       <Router>
-        <Header />
-       
+       <Header />
         <Routes>
           <Route path="/home" element={<Body />} />
           <Route path="/" element={<Body />} />

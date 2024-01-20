@@ -7,13 +7,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'site-color':'#992b00',
         'custom-blue': '#1DA1F2',
         'custom-green': '#17BF63',
         'custom-red': '#E0245E'
       },
       backgroundImage:{
         "banner-logo":"url('/src/images/main_banner.jpg')",
-
+        "mso-logo":"url('/src/images/mso-gap.png')",
       }
     }
   },
