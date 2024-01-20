@@ -5,7 +5,7 @@ import Breadcrumbs from './pages/breadcrums';
 const Help = () => {
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-[calc(100vh-24vh)]">
        <Breadcrumbs />
       <Banner />
     </div>

@@ -3,7 +3,7 @@ import logo from '../images/file_files.png';
 const Body = () => {
   console.log("home");
   return (
-    <div className="w-full min-h-screen ">
+    <div className="w-full min-h-[calc(100vh-24vh)]">
 
       <div className={`h-60 bg-banner-logo  relative  w-300  bg-center `}></div>
 

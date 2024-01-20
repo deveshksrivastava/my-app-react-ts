@@ -14,8 +14,9 @@ const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown }) => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  
   const handleItemClick = (index: number) => {
-
+    
     toggleDropdown();
     setActiveIndex(index);
   };
@@ -38,6 +39,7 @@ const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown }) => {
     };
   }, []);
   return (
+    <>
     <div className="relative " ref={dropdownRef}>
       {path === '#' ? (
         <Link to={path} className="px-2 py-2 text-md font-medium text-white hover:text-white">
@@ -59,12 +61,13 @@ const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown }) => {
           {title}
         </NavLink>
       )}
+    </div>
       {dropdown && (
         <div 
           // className={`fixed w-full text-center left-0 mt-2 bg-white shadow-lg   z-10 ${isDropdownOpen ? '' : 'hidden'}`}
-          className={`fixed w-full text-center left-0 mt-2 bg-white shadow-lg   z-10 ${isDropdownOpen ? '' : 'hidden'}`}
+          className={`absolute w-full text-center left-0 mt-2 bg-white shadow-lg   z-10 ${isDropdownOpen ? '' : 'hidden'}`}
         >
-          {dropdown.map((subNavLink, index) => (
+          {dropdown.map((subNavLink, index) => (            
             <>
               <section
                 key={index}
@@ -80,7 +83,7 @@ const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown }) => {
           ))}
         </div>
       )}
-    </div>
+    </>
   );
 };
 
