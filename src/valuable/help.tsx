@@ -3,7 +3,7 @@ import Banner from './pages/banner';
 import Breadcrumbs from './pages/breadcrums';
 
 const Help = () => {
-  
+
   return (
     <div className="min-h-screen">
        <Breadcrumbs />

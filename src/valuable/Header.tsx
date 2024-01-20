@@ -33,7 +33,7 @@ const navLinks:NavLinkProps[] = [
   },
   {
     title: 'Service',
-    path: '#',
+    path: '/service/:',
     dropdown: [
       {
         title: 'Request Advanced Analytics Enviornment',
@@ -47,7 +47,7 @@ const navLinks:NavLinkProps[] = [
   },
   {
     title: 'Help',
-    path: '#',
+    path: '/help/:abc',
     dropdown: [
       {
         title: 'About DAP',
