@@ -1,4 +1,3 @@
-const { url } = require('inspector');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -14,7 +13,7 @@ module.exports = {
       },
       backgroundImage:{
         "banner-logo":"url('/src/images/main_banner.jpg')",
-        "mso-logo":"url('/src/images/mso-gap.png')",
+        "mso-logo":"url('/src/images/main_banner1.jpg')",
       }
     }
   },
