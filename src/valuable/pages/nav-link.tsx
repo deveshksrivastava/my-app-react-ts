@@ -8,9 +8,17 @@ interface NavLinkProps {
 
 const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  
+  const handleItemClick = (index: number) => {
+    
+    toggleDropdown();
+    setActiveIndex(index);
   };
 
   const closeDropdown = () => {
@@ -31,33 +39,43 @@ const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown }) => {
     };
   }, []);
   return (
+    <>
     <div className="relative " ref={dropdownRef}>
-     {path === '#' ? (
-        <Link to={path} onClick={toggleDropdown} className="px-2 py-2 text-md font-medium text-white hover:text-white">
+      {path === '#' ? (
+        <Link to={path} className="px-2 py-2 text-md font-medium text-white hover:text-white">
           {title}
         </Link>
       ) : (
-      <NavLink
-        to={path}
-        onClick={toggleDropdown}
-        className={({ isActive }) => {          
-          return (
-            'px-2 py-2  text-md font-medium ' +
-            (isActive ? 'text-gray-300 bg-gray-500 border-b-[4px]  border-b-zinc-100 hover:text-white ' : ' text-white')
-          );
-        }}
-      >
-        {title}
-      </NavLink>
-      )}
-      {dropdown && (
-        <div
-          className={`fixed w-full text-center left-0 mt-2 bg-white shadow-lg   z-10 ${isDropdownOpen ? '' : 'hidden'}`}
+        <NavLink
+          to={path}
+          onClick={toggleDropdown}
+          className={({ isActive }) => {
+            return (
+              'px-2 py-2  text-md font-medium ' +
+              (isActive
+                ? 'text-gray-300 bg-gray-500 border-b-[4px]  border-b-zinc-100 hover:text-white '
+                : ' text-white')
+            );
+          }}
         >
-          {dropdown.map((subNavLink, index) => (
+          {title}
+        </NavLink>
+      )}
+    </div>
+      {dropdown && (
+        <div 
+          // className={`fixed w-full text-center left-0 mt-2 bg-white shadow-lg   z-10 ${isDropdownOpen ? '' : 'hidden'}`}
+          className={`absolute w-full text-center left-0 mt-2 bg-white shadow-lg   z-10 ${isDropdownOpen ? '' : 'hidden'}`}
+        >
+          {dropdown.map((subNavLink, index) => (            
             <>
-              <section key={index} className="text-center underline cursor-pointer py-3 text-red-500">
-                <Link to={subNavLink.path} className="p-2" onClick={toggleDropdown}>
+              <section
+                key={index}
+
+                onClick={()=>handleItemClick(index)}
+                className="text-center underline cursor-pointer py-3 text-red-500"
+              >
+                <Link to={subNavLink.path}  className={`p-2 ${activeIndex === index ? 'text-gray-300 bg-gray-500 border-b-[4px]  border-b-zinc-100 hover:text-white' : 'text-black'}`}>
                   {subNavLink.title}
                 </Link>
               </section>
@@ -65,7 +83,7 @@ const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown }) => {
           ))}
         </div>
       )}
-    </div>
+    </>
   );
 };
 
