@@ -18,27 +18,26 @@ const Body = () => {
           </div>
         </div>
         <div className="px-20 py-10 ">
-          <div className="flex py-5 mt-2 text-center border-b gap-5 items-center border-gray-500 ">
+          <div className="flex py-5 mt-2  border-b gap-5  border-gray-500 ">
             <span className="ml-4">
               <img src={logo} alt="logo" />
             </span>
             <div className="mr-5">
-              <h1 className="text-[20px] bold text-red-900 justify-start ">Request Advanced Analytical Enviornment</h1>
+              <h1 className="text-[16px] bold text-red-900 justify-start ">Request Advanced Analytical Enviornment</h1>
               <p>For Requesting AEE that enables you to enable AI</p>
             </div>
           </div>
-          <div className="flex py-5 mt-2 text-center  gap-5 items-center  ">
+          <div className="flex py-5 mt-2 gap-5 ">
             <span className="ml-4">
               <img src={logo} alt="logo" />
             </span>
             <div className="mr-5">
-              <h1 className="text-[20px] bold text-red-900 justify-start ">Request Advanced Analytical Enviornment</h1>
+              <h1 className="text-[16px] bold text-red-900 justify-start ">Request Advanced Analytical Enviornment</h1>
               <p>For Requesting AEE that enables you to enable AI</p>
             </div>
           </div>
         </div>
       </div>
-   
     </div>
   );
 };
