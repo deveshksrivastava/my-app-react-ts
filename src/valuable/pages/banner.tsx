@@ -47,7 +47,7 @@ const Banner:React.FC<BannerProps> = ({path,accordionData}) => {
     <>
       <div className={`h-60 ${path ==='faqs' ? 'bg-mso-logo' : 'bg-banner-logo'} w-300 flex  bg-center `}></div>
       <div className="w-full flex ">
-        <div className="w-[65%] max-w-7xl  relative m-auto ">
+        <div className="w-[65%] max-w-4xl  relative m-auto  pl-20">
           <div className="max-w-7xl items-center justify-center ">
             {path === 'faqs' && (
               <>

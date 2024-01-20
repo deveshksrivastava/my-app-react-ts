@@ -55,7 +55,7 @@ const navLinks: NavLinkProps[] = [
       },
       {
         title: 'Report a DAP issue',
-        path: '/help/request-a-dap-issue'
+        path: '/help/report-a-dap-issue'
       },
       {
         title: 'FAQS',

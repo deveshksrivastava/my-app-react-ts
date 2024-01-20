@@ -33,7 +33,6 @@ const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown }) => {
     };
 
     document.addEventListener('click', handleClickOutside);
-
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
