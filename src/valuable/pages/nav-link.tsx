@@ -74,7 +74,7 @@ const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown }) => {
                 onClick={()=>handleItemClick(index)}
                 className="text-center underline cursor-pointer py-3 text-red-500"
               >
-                <Link to={subNavLink.path}  className={`p-2 ${activeIndex === index ? 'text-gray-300 bg-gray-500 border-b-[4px]  border-b-zinc-100 hover:text-white' : 'text-black'}`}>
+                <Link to={subNavLink.path}  className={`p-2  text-black`}>
                   {subNavLink.title}
                 </Link>
               </section>

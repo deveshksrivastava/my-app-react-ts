@@ -13,11 +13,11 @@ const Help = () => {
   const [isOpenHealth, setIsOpenHealth] = useState(false);
   const openModalhealth = () => setIsOpenHealth(true);
   const closeModalHealth = () =>{ 
-    navigate('/');
+    // navigate('/');
     setIsOpenHealth(false)
   }
   const closeModal = () => {
-    navigate('/');
+    // navigate('/');
     setIsOpen(false);
     
   }
@@ -38,7 +38,7 @@ const Help = () => {
     if(path[0] === 'report-a-dap-issue'){
       openModalhealth()
     } 
-  },[location.pathname,path]);
+  },[location.pathname]);
 
 
   return (
