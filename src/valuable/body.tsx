@@ -5,7 +5,7 @@ const Body = () => {
   return (
     <div className="w-full min-h-[calc(100vh-24vh)]">
 
-      <div className={`h-60 bg-banner-logo  relative  w-300  bg-center `}></div>
+      <div className={`h-60 bg-banner-logo bg-cover   relative  w-300  bg-center `}></div>
 
       <div className="max-w-3xl  m-auto relative ">
         <div className=" text-white  flex items-center justify-center ">

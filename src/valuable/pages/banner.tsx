@@ -47,7 +47,7 @@ const Banner:React.FC<BannerProps> = ({path,accordionData}) => {
     <>
       <div className={`h-60 ${path ==='faqs' ? 'bg-mso-logo' : 'bg-banner-logo'} w-300 flex  bg-center `}></div>
       <div className="w-full flex ">
-        <div className="w-[65%] max-w-7xl  relative m-auto ">
+        <div className="w-[65%] max-w-4xl  relative m-auto  sm:pl-[14rem]">
           <div className="max-w-7xl items-center justify-center ">
             {path === 'faqs' && (
               <>
@@ -60,17 +60,7 @@ const Banner:React.FC<BannerProps> = ({path,accordionData}) => {
                 <div className="px-10 py-10 ">
                   
                   <div className=" py-3   justify ">
-                    <h2 className="font-bold py-2">
-                      Download Paragraph Completion Questions PDF for Bank Exams 2022 at Smartkeeda?
-                    </h2>
-                    <p>
-                      Paragraph Completion is the integral part of the Verbal Reasoning Section asked in all the major
-                      competitive examinations. In Paragraph Completion Questions, a paragraph is generally given by the
-                      author in which some statements will be missing which has to be answered by the students. These
-                      paragraphs are generally part of the bigger articles and revolve around a particular theme. It is
-                      important for a student to understand that theme and then answer the Questions. These Questions
-                      tests the Reading Comprehension and Vocabulary of the students.
-                    </p>
+
                     {accordionData.map((item, index) => (
                       <Accordion key={index} title={item.title} content={item.content} />
                     ))}

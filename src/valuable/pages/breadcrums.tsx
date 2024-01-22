@@ -8,7 +8,7 @@ const Breadcrumbs = () => {
 
   return (
     <div>
-      <nav className="flex w-full" aria-label="Breadcrumb">
+      <nav className="flex w-full ml-[14rem]" aria-label="Breadcrumb">
         {/* <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"> */}
         <a
           href="#"
