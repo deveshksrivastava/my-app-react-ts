@@ -32,10 +32,10 @@ const Help = () => {
   ];
   useEffect(() => {
     // Check if the pathname meets the condition to open the modal
-    if (path[0] === 'about-dap') {
+    if (path[0] === 'about-us') {
       openModal()
     } 
-    if(path[0] === 'report-a-dap-issue'){
+    if(path[0] === 'report-a-us-issue'){
       openModalhealth()
     } 
   },[location.pathname]);
