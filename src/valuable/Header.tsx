@@ -50,11 +50,11 @@ const navLinks: NavLinkProps[] = [
     path: '/help/:abc',
     dropdown: [
       {
-        title: 'About DAP',
+        title: 'About US',
         path: '/help/about-dap'
       },
       {
-        title: 'Report a DAP issue',
+        title: 'Report a US issue',
         path: '/help/report-a-dap-issue'
       },
       {
