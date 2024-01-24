@@ -12,6 +12,7 @@ type User = {
   city: string;
 };
 
+// Example 1
 const Child = (props: User) => {
   return <div>Child {props.city}</div>;
 };
@@ -25,6 +26,7 @@ const useLogger = (ChildComp: any) => (props: any) => {
 // eslint-disable-next-line react-hooks/rules-of-hooks
 const Parent = useLogger(Child); //1. Send as componet
 
+// Example 2
 const Child1 = (props: { name: string; age: string; enhancedProp: string }) => {
   return (
     <div>
@@ -41,10 +43,30 @@ const Hoc = () => {
     <div>
       <Parent city="Mumbai" />
       <Parent1 name="Mumbai" age="40" />
+      <RestaurantPromote city="Mumbai" />
     </div>
   );
 };
 
 export default Hoc;
 
-// What is higher order component?
+// What is higher order component
+// ADIDNG PROMOTOR ON EXISITNG FUNCTION
+// here we are not changing the main component behavior because
+
+const RestaurantCard = (props: User) => {
+  return <div>RestaurantCard {props.city}</div>;
+};
+
+const withPromotedLabel = (RestaurantCard: React.ComponentType<any>) => {
+  return (props: any) => {
+    return (
+      <div className="text-black bg-red rounded-r-lg font-bold m-2 p-2">
+        <label className="">Promoted</label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
+
+const RestaurantPromote = withPromotedLabel(RestaurantCard);
