@@ -1,10 +1,14 @@
 import React from 'react'
 type button={
-    classname:string
+    classname:string,
+    text?:string,
+    onClick?:()=> void;
 }
-const CustomButton:React.FC<button> = ({classname}) => {
+const CustomButton:React.FC<button> = ({classname,text,onClick}) => {
   return (
-    <button className={`${classname}`} type='submit'>save</button>
+    
+    <button className={`${classname}`} type='submit' onClick={onClick}>{text}</button>
+    
   )
 }
 

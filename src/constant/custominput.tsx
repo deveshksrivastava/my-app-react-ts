@@ -5,19 +5,20 @@ interface CustomInputProps {
     type?: string;
     id: string;
     name: string;
+    labelstyle?:string;
     classname?:string;
     onChange: (id: string, value: string) => void;
     error?:string;
   }
- const CustomInput:React.FC<CustomInputProps> = ({label,type,id,name,onChange,classname,error}) => {
+ const CustomInput:React.FC<CustomInputProps> = ({label,type,id,name,onChange,classname,labelstyle,error}) => {
   const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
     onChange(id,e.target.value)
   }
   return (
-    <div className={`grid text-start px-20 `}>
-      {label && <label htmlFor={id}>{label}</label>}
+    <>
+      {label && <label htmlFor={id} className={`${labelstyle}`}>{label}</label>}
       <input
-       className={`${classname} border outline-none p-1 w-full  `}
+       className={`${classname} `}
         type={type}
         id={id}
         name={name}
@@ -25,7 +26,7 @@ interface CustomInputProps {
 
       />
       {error && <p className='mt-2 text-sm text-red-300'>{error}</p>}
-    </div>
+    </>
   )
 }
 
