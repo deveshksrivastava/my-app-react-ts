@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { FaAngleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import CustomButton from '../../constant/customButton';
 import logo from '../../images/file_files.png';
 
 interface AccordionProps {
@@ -40,9 +42,9 @@ const Banner: React.FC<BannerProps> = ({ path, accordionData }) => {
 
   return (
     <>
-      <div className={`h-60 ${path === 'faqs' ? 'bg-mso-logo' : 'bg-banner-logo'} w-300 flex  bg-center `}></div>
+      <div className={`sm:h-60 h-40 ${path === 'faqs' ? 'bg-mso-logo' : 'bg-banner-logo'} w-300 flex  bg-center `}></div>
       <div className="w-full flex ">
-        <div className="w-[65%] max-w-4xl  relative m-auto  sm:pl-[14rem]">
+        <div className="sm:w-[65%] w-[90%] sm:max-w-4xl  relative m-auto  sm:pl-[14rem]">
           <div className="max-w-7xl items-center justify-center ">
             {path === 'faqs' && (
               <>
@@ -51,15 +53,17 @@ const Banner: React.FC<BannerProps> = ({ path, accordionData }) => {
                     <h1 className="text-2xl font-bold  ">Frequntly Asked Questions</h1>
                   </div>
                 </div>
-                <div className="px-10 py-10 ">
+                <div className="py-10 ">
                   <div className=" py-3   justify ">
                     {accordionData.map((item, index) => (
                       <Accordion key={index} title={item.title} content={item.content} />
                     ))}
                   </div>
-                  <div className="w-[200px] m-auto rounded p-2 items-start bg-red-500 text-center">
-                    <span>Request for data upload </span>
-                  </div>
+                  <CustomButton
+                    text="Request for data upload"
+                    classname="flex sm:w-1/2 m-auto justify-center items-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    icon={<FaAngleRight /> }
+                  />
                 </div>
               </>
             )}

@@ -1,5 +1,7 @@
 import React from 'react';
+import { FaAngleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import CustomButton from '../../constant/customButton';
 import logo from '../../images/file_files.png';
 interface BannerProps {
   path: string;
@@ -10,13 +12,13 @@ const ServiceBanner: React.FC<BannerProps> = ({ path }) => {
   return (
     <>
       <div
-        className={`h-60 ${path === 'request-advanced-analytics-enviornment' ? 'bg-mso-logo' : 'bg-banner-logo'} w-300 flex  bg-center `}
+        className={`sm:h-80  h-40 ${path === 'request-advanced-analytics-enviornment' ? 'bg-mso-logo' : 'bg-banner-logo'} w-300 flex  bg-center  `}
       ></div>
       <div className="w-full flex ">
-        <div className="w-[65%] max-w-4xl  relative m-auto pl-[14rem]">
-          <div className="max-w-7xl items-center justify-center ">
+        <div className="sm:w-[65%] sm:max-w-4xl w-[90%]  relative m-auto sm:pl-[14rem]">
+          <div className="max-w-7xl  items-center justify-center ">
             {path === 'request-advanced-analytics-enviornment' ? (
-              <>
+              <div className='gap-3 flex flex-col'>
                 <div className="flex items-center  justify-center ">
                   <div className="absolute  justify-center w-full bg-white    p-10 mb-20 text-center">
                     <h1 className="text-2xl font-bold  ">Advanced Analytics Subject(AAS)</h1>
@@ -44,11 +46,13 @@ const ServiceBanner: React.FC<BannerProps> = ({ path }) => {
                       author in which some statements will be missing which has to be answered by the students.
                     </p>
                   </div>
-                  <div className="w-[200px] m-auto rounded p-2 items-start bg-red-500 text-center">
-                    <span>Request for data upload </span>
-                  </div>
+                  <CustomButton
+                    text="Request for data upload"
+                    classname="flex sm:w-1/2 m-auto justify-center items-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+                    icon={<FaAngleRight /> }
+                  />
                 </div>
-              </>
+              </div>
             ) : path === 'request-data-update' ? (
               <>
                 <div className="flex items-center  justify-center ">
@@ -78,9 +82,11 @@ const ServiceBanner: React.FC<BannerProps> = ({ path }) => {
                       author in which some statements will be missing which has to be answered by the students.
                     </p>
                   </div>
-                  <div className="w-[200px] m-auto rounded p-2 items-start bg-red-500 text-center">
-                    <span>Request for data upload </span>
-                  </div>
+                  <CustomButton
+                    text="Request for data upload"
+                    classname="flex sm:w-1/2 m-auto justify-center items-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    icon={<FaAngleRight /> }
+                  />
                 </div>
               </>
             ) : (
@@ -89,8 +95,8 @@ const ServiceBanner: React.FC<BannerProps> = ({ path }) => {
           </div>
         </div>
         {/* side bar */}
-        <div className="w-[25%] mt-10 hidden md:flex flex-col overflow-hidden underline gap-3 ">
-          <Link to={'/service/request-advanced-analytics-enviornment'} className="flex items-center gap-2 m-0 ">
+        <div className="sm:w-[25%] mt-10 hidden md:flex flex-col overflow-hidden underline gap-3 ">
+          <Link to='/service/request-advanced-analytics-enviornment' className="flex items-center gap-2 m-0 ">
             <img src={logo} className="w-3 h-4" alt="scr" />
             request-advanced-analytics-enviornment
           </Link>

@@ -1,12 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 interface NavLinkProps {
-  path: string;
+  path?: string;
   title: string;
   dropdown?: NavLinkProps[];
+  onClick?: () => void;
 }
 
-const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown }) => {
+const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown,onClick }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -37,13 +38,19 @@ const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown }) => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
+  console.log(path);
+  
   return (
     <>
     <div className="relative " ref={dropdownRef}>
-      {path === '#' ? (
-        <Link to={path} className="px-2 py-2 text-md font-medium text-white hover:text-white">
-          {title}
-        </Link>
+      {path === undefined ? (
+        // <Link to={path} className=" text-md font-medium text-white hover:text-white">
+        <>
+        <span className='text-white  px-2 py-2 text-md font-medium  border-b-zinc-100 hover:text-white active:bg-slate-500' onClick={onClick}>{title}</span>
+        
+        </>  
+
+        // </Link>
       ) : (
         <NavLink
           to={path}
@@ -61,23 +68,26 @@ const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown }) => {
         </NavLink>
       )}
     </div>
-      {dropdown && (
+      {dropdown  && (
         <div 
           // className={`fixed w-full text-center left-0 mt-2 bg-white shadow-lg   z-10 ${isDropdownOpen ? '' : 'hidden'}`}
           className={`absolute w-full text-center left-0 mt-2 bg-white shadow-lg   z-10 ${isDropdownOpen ? '' : 'hidden'}`}
         >
           {dropdown.map((subNavLink, index) => (            
+            
             <>
+            {subNavLink?.path !== undefined && 
               <section
-                key={index}
-
-                onClick={()=>handleItemClick(index)}
-                className="text-center underline cursor-pointer py-3 text-red-500"
+              key={index}
+              
+              onClick={()=>handleItemClick(index)}
+              className="text-center underline cursor-pointer py-3 text-red-500"
               >
                 <Link to={subNavLink.path}  className={`p-2  text-black`}>
                   {subNavLink.title}
                 </Link>
               </section>
+              }
             </>
           ))}
         </div>
