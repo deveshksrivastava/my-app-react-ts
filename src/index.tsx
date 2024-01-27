@@ -11,6 +11,8 @@ import Help from './valuable/help';
 import Registration from './registration';
 import Login from './app';
 import Protected from './auth/protected';
+import Header from './valuable/header';
+import Profile from './valuable/profile';
 
 const AppLayout = () => {
    return (
@@ -41,6 +43,11 @@ const AppLayout = () => {
           <Route path="/contact" element={
           <Protected>
             <Contact />
+          </Protected>
+          } />
+          <Route path="/profile" element={
+          <Protected>
+            <Profile />
           </Protected>
           } />
           <Route path="/register" element={<Registration />} />
