@@ -77,11 +77,12 @@ const MyComponent = () => {
           onSubmit={data => {
             console.log(data);
           }}
+          noValidate
         >
           <CustomInput
             id="email"
             name="email"
-            type="email"
+            type="text"
             label="Email Address"
             onChange={handleChange}
             labelstyle="block text-sm font-medium leading-6 text-gray-900 mb-2"

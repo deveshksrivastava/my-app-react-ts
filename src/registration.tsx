@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaAngleRight } from 'react-icons/fa';
 import CustomTextArea from './constant/customArea';
 import CustomButton from './constant/customButton';
 import CustomInput from './constant/custominput';
@@ -12,7 +13,6 @@ type RegistrationFormData = {
   department: string;
   desc: string;
   msg: string;
-
 };
 const Registration: React.FC = () => {
   const [formData, setFormData] = useState<RegistrationFormData>({
@@ -46,8 +46,8 @@ const Registration: React.FC = () => {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Invalid email format';
     }
-    if(!formData.role.trim()){
-      newErrors.role="Role is required"
+    if (!formData.role.trim()) {
+      newErrors.role = 'Role is required';
     }
 
     setErrors(newErrors);
@@ -66,9 +66,9 @@ const Registration: React.FC = () => {
   return (
     <div className="w-full min-h-[calc(100vh-24vh)]">
       <div className={`h-60 bg-banner-logo bg-cover relative w-300  bg-center `}></div>
-      <div className="max-w-3xl m-auto py-3 relative   ">
+      <div className="sm:max-w-3xl m-auto py-3 relative   ">
         <div className="flex items-center justify-center ">
-          <div className="absolute justify-center w-full bg-white  max-w-3xl  p-10 mb-20  text-center">
+          <div className="absolute   bg-white  sm:max-w-7xl w-full   p-10 mb-20   text-center">
             <h1 className="text-2xl font-bold  ">user Registration form</h1>
           </div>
         </div>
@@ -76,21 +76,26 @@ const Registration: React.FC = () => {
         <form
           onSubmit={e => {
             handleSubmit(e);
+            
           }}
-          className="mt-10 flex flex-col gap-3"
+          noValidate
+          className="mt-10 flex flex-col px-3  gap-3"
         >
-          <div className="flex justify-between">
+          <div className="sm:flex gap-3  justify-between">
             <CustomInput
-              classname=" "
+              labelstyle='mb-2'
+              classname="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               label="firstName:"
               id="firstName"
               type="text"
               name={formData.firstName}
               onChange={handleInputChange}
+              errorStyle='text-red-400 '
               error={errors.firstName}
             />
             <CustomInput
-              classname=" "
+            labelstyle='mb-2  mt-2'
+              classname="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               label="lastName:"
               id="lastName"
               type="text"
@@ -100,16 +105,17 @@ const Registration: React.FC = () => {
             />
           </div>
           <CustomInput
-            classname=""
+            classname="block w-full  rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             label="email:"
             id="email"
             type="email"
+            
             name={formData.email}
             onChange={handleInputChange}
             error={errors.email}
           />
           <CustomInput
-            classname="  "
+            classname=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 "
             label="role:"
             id="role"
             type="text"
@@ -118,7 +124,7 @@ const Registration: React.FC = () => {
             error={errors.role}
           />
           <CustomInput
-            classname=" "
+            classname=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             label="teamName:"
             id="teamName"
             type="text"
@@ -126,17 +132,21 @@ const Registration: React.FC = () => {
             onChange={handleInputChange}
           />
           <CustomInput
-            classname=" "
+            classname="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 "
             label="department:"
             id="department"
             type="text"
             name={formData.department}
             onChange={handleInputChange}
           />
-          <CustomTextArea classname=" " label="desc:" id="desc" name={formData.desc} onChange={handleInputChange} />
-          <CustomTextArea classname=" " label="msg:" id="msg" name={formData.msg} onChange={handleInputChange} />
+          <CustomTextArea classname="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 " label="desc:" id="desc" name={formData.desc} onChange={handleInputChange} />
+          <CustomTextArea classname="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 " label="msg:" id="msg" name={formData.msg} onChange={handleInputChange} />
 
-          <CustomButton classname="bg-green-300 w-[200px] m-auto p-1 active:bg-green-500" />
+          <CustomButton
+                      text="Register"
+                      classname="flex w-1/2 m-auto justify-center items-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      icon={<FaAngleRight /> }
+          />
         </form>
       </div>
     </div>

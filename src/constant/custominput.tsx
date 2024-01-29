@@ -9,8 +9,9 @@ interface CustomInputProps {
     classname?:string;
     onChange: (id: string, value: string) => void;
     error?:string;
+    errorStyle?:string;
   }
- const CustomInput:React.FC<CustomInputProps> = ({label,type,id,name,onChange,classname,labelstyle,error}) => {
+ const CustomInput:React.FC<CustomInputProps> = ({label,type,id,name,onChange,classname,labelstyle,error,errorStyle}) => {
   const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
     onChange(id,e.target.value)
   }
@@ -18,14 +19,14 @@ interface CustomInputProps {
     <>
       {label && <label htmlFor={id} className={`${labelstyle}`}>{label}</label>}
       <input
-       className={`${classname} `}
+       className={`${classname} p-2 `}
         type={type}
         id={id}
         name={name}
         onChange={handleChange}
-
       />
-      {error && <p className='mt-2 text-sm text-red-300'>{error}</p>}
+      
+      {error && <p className={`'mt-2 text-sm text-red-300' ${errorStyle}`}>{error}</p>}
     </>
   )
 }
