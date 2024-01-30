@@ -1,52 +1,50 @@
-import { useState,useEffect, useRef } from 'react';
-import { useLocation,Outlet, useNavigate } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useLocation, Outlet, useNavigate } from 'react-router-dom';
 import Banner from './pages/banner';
 import Breadcrumbs from './pages/breadcrums';
-
+import usePageTitle from '../utils/hooks/usePageTitle';
 const Help = () => {
-  const location=useLocation()
+  const location = useLocation();
   const navigate = useNavigate();
-
+  usePageTitle("help")
   const pathname = location.pathname.split('/').filter(x => x);
-  const path=pathname.slice(1)
+  const path = pathname.slice(1);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenHealth, setIsOpenHealth] = useState(false);
   const openModalhealth = () => setIsOpenHealth(true);
-  const closeModalHealth = () =>{ 
+  const closeModalHealth = () => {
     // navigate('/');
-    setIsOpenHealth(false)
-  }
+    setIsOpenHealth(false);
+  };
   const closeModal = () => {
     // navigate('/');
     setIsOpen(false);
-    
-  }
+  };
   const openModal = () => {
-    setIsOpen(true)
+    setIsOpen(true);
   };
   // console.log(path);
   const accordionData = [
     { title: 'Accordion 1', content: 'Content for Accordion 1' },
     { title: 'Accordion 2', content: 'Content for Accordion 2' },
-    { title: 'Accordion 3', content: 'Content for Accordion 3' },
+    { title: 'Accordion 3', content: 'Content for Accordion 3' }
   ];
   useEffect(() => {
     // Check if the pathname meets the condition to open the modal
     if (path[0] === 'about-us') {
-      openModal()
-    } 
-    if(path[0] === 'report-a-us-issue'){
-      openModalhealth()
-    } 
-  },[location.pathname]);
-
+      openModal();
+    }
+    if (path[0] === 'report-a-us-issue') {
+      openModalhealth();
+    }
+  }, [location.pathname]);
 
   return (
     <div className="min-h-[calc(100vh-24vh)]">
-       <Breadcrumbs />
-       <Banner path={path[0]} accordionData={accordionData}/>
+      <Breadcrumbs />
+      <Banner path={path[0]} accordionData={accordionData} />
       <Outlet />
-       {isOpen && (
+      {isOpen && (
         <div
           className="fixed z-10 inset-0 overflow-y-auto"
           aria-labelledby="modal-title"
@@ -107,7 +105,7 @@ const Help = () => {
         </div>
       )}
 
-{isOpenHealth && (
+      {isOpenHealth && (
         <div
           className="fixed z-10 inset-0 overflow-y-auto"
           aria-labelledby="modal-title"
@@ -169,7 +167,6 @@ const Help = () => {
           </div>
         </div>
       )}
-
     </div>
   );
 };
