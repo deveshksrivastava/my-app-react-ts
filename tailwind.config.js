@@ -9,7 +9,8 @@ module.exports = {
         'site-color':'#992b00',
         'custom-blue': '#1DA1F2',
         'custom-green': '#17BF63',
-        'custom-red': '#E0245E'
+        'custom-red': '#E0245E',
+        'custom-white':'#FFFFFF'
       },
       backgroundImage:{
         "banner-logo":"url('/src/images/main_banner.jpg')",

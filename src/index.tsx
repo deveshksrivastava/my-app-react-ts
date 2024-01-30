@@ -13,6 +13,7 @@ import Login from './app';
 import Protected from './auth/protected';
 import Header from './valuable/header';
 import Profile from './valuable/profile';
+import ServiceDetails from './valuable/servicedetails';
 
 const AppLayout = () => {
   return (
@@ -45,15 +46,15 @@ const AppLayout = () => {
             }
           />
           <Route
-            path="/service/:name"
+            path="/service/:id"
             element={
               <Protected>
-                <Services />
+                <ServiceDetails />
               </Protected>
             }
           />
           <Route
-            path="/help/:name"
+            path="/help/:id"
             element={
               <Protected>
                 <Help />

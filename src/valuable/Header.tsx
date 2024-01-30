@@ -32,11 +32,11 @@ const Header = () => {
       dropdown: [
         {
           title: 'Request Advanced Analytics Enviornment',
-          path: '/service/request-advanced-analytics-enviornment'
+          path: '/service/advance-analytics-enviroment'
         },
         {
           title: 'Request Data Upload',
-          path: '/service/request-data-update'
+          path: '/service/data-upload'
         }
       ]
     },
