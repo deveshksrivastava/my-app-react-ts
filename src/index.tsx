@@ -14,6 +14,8 @@ import Protected from './auth/protected';
 import Header from './valuable/header';
 import Profile from './valuable/profile';
 import ServiceDetails from './valuable/servicedetails';
+import HelpServices from './valuable/helpdetails';
+import Home from './valuable/home';
 
 const AppLayout = () => {
   return (
@@ -25,7 +27,7 @@ const AppLayout = () => {
             path="/"
             element={
               <Protected>
-                <Body />
+                <Home />
               </Protected>
             }
           />
@@ -57,7 +59,7 @@ const AppLayout = () => {
             path="/help/:id"
             element={
               <Protected>
-                <Help />
+                <HelpServices />
               </Protected>
             }
           />

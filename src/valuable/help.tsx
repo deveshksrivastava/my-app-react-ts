@@ -3,55 +3,60 @@ import { useLocation, Outlet, useNavigate } from 'react-router-dom';
 import Banner from './pages/banner';
 import Breadcrumbs from './pages/breadcrums';
 import usePageTitle from '../utils/hooks/usePageTitle';
+import LayoutWrapper from '../wrapper/layoutWrapper';
+import MyCard from '../reuseable/card';
 const Help = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  usePageTitle("help")
-  const pathname = location.pathname.split('/').filter(x => x);
-  const path = pathname.slice(1);
-  const [isOpen, setIsOpen] = useState(false);
-  const [isOpenHealth, setIsOpenHealth] = useState(false);
-  const openModalhealth = () => setIsOpenHealth(true);
-  const closeModalHealth = () => {
-    // navigate('/');
-    setIsOpenHealth(false);
-  };
-  const closeModal = () => {
-    // navigate('/');
-    setIsOpen(false);
-  };
-  const openModal = () => {
-    setIsOpen(true);
-  };
-  // console.log(path);
-  const accordionData = [
-    { title: 'Accordion 1', content: 'Content for Accordion 1' },
-    { title: 'Accordion 2', content: 'Content for Accordion 2' },
-    { title: 'Accordion 3', content: 'Content for Accordion 3' }
-  ];
-  useEffect(() => {
-    // Check if the pathname meets the condition to open the modal
-    if (path[0] === 'about-us') {
-      openModal();
-    }
-    if (path[0] === 'report-a-us-issue') {
-      openModalhealth();
-    }
-  }, [location.pathname]);
+  // const location = useLocation();
+  // const navigate = useNavigate();
+  // usePageTitle("help")
+  // const pathname = location.pathname.split('/').filter(x => x);
+  // const path = pathname.slice(1);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [isOpenHealth, setIsOpenHealth] = useState(false);
+  // const openModalhealth = () => setIsOpenHealth(true);
+  // const closeModalHealth = () => {
+  //   // navigate('/');
+  //   setIsOpenHealth(false);
+  // };
+  // const closeModal = () => {
+  //   // navigate('/');
+  //   setIsOpen(false);
+  // };
+  // const openModal = () => {
+  //   setIsOpen(true);
+  // };
+  // // console.log(path);
+  // const accordionData = [
+  //   { title: 'Accordion 1', content: 'Content for Accordion 1' },
+  //   { title: 'Accordion 2', content: 'Content for Accordion 2' },
+  //   { title: 'Accordion 3', content: 'Content for Accordion 3' }
+  // ];
+  // useEffect(() => {
+  //   // Check if the pathname meets the condition to open the modal
+  //   if (path[0] === 'about-us') {
+  //     openModal();
+  //   }
+  //   if (path[0] === 'report-a-us-issue') {
+  //     openModalhealth();
+  //   }
+  // }, [location.pathname]);
 
   return (
-    <div className="min-h-[calc(100vh-24vh)]">
-      <Breadcrumbs />
+    
+          <LayoutWrapper coverImage={"/asserts/img/base.jpg"} layoutTitle="">
+
+           
+      {/* <Breadcrumbs />
       <Banner path={path[0]} accordionData={accordionData} />
       <Outlet />
       {isOpen && (
         <div
-          className="fixed z-10 inset-0 overflow-y-auto"
-          aria-labelledby="modal-title"
-          role="dialog"
-          aria-modal="false"
+        className="fixed z-10 inset-0 overflow-y-auto"
+        aria-labelledby="modal-title"
+        role="dialog"
+        aria-modal="false"
         >
-          <div className="flex items-center justify-center min-h-screen">
+        <div className="flex items-center justify-center min-h-screen">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
             <div className="bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
@@ -166,8 +171,32 @@ const Help = () => {
             </div>
           </div>
         </div>
-      )}
-    </div>
+      )} */}
+                <div className='flex flex-col justify-items-center gap-[2rem] items-center w-full'>
+          <h4 className="text-4xl font-medium text-center">Accelerate your Data & Analytics Process</h4>
+          <div className="mt-2 flex gap-6 flex-col">
+            <MyCard
+              cardImg="/asserts/img/analytics.png"
+              cardContent={
+                <>
+                  <p className="text-site-color">Request Advanced Analytics Enviroment</p>
+                  <p>For requesting AAE that enables you to embed AI.</p>
+                </>
+              }
+            />
+            <div className=" border-t-2" />
+            <MyCard
+              cardImg="/asserts/img/analytics.png"
+              cardContent={
+                <>
+                  <p className="text-site-color">Request for Data Upload</p>
+                  <p>For requesting data upload into ZAP on an adhoc basis.</p>
+                </>
+              }
+            />
+          </div>
+          </div>
+    </LayoutWrapper>    
   );
 };
 

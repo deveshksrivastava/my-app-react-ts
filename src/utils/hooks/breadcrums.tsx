@@ -20,7 +20,8 @@ const Breadcrumbs = (props: BreadCrumbProps) => {
   }, [loc]);
   return (
     <div>
-      <nav className="flex max-w-full sm:ml-[16rem]" aria-label="Breadcrumb">
+
+      <nav className="flex max-w-full sm:ml-[5rem] lg:ml-[16rem] " aria-label="Breadcrumb">
         <Link
           to="/"
           className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"

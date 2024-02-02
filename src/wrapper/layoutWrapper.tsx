@@ -47,13 +47,13 @@ const LayoutWrapper: React.FC<LayoutProps> = props => {
       </div>
       <div className="flex justify-center  ">
         {layoutTitle && (
-          <div className="absolute top-[40%] bg-black bg-opacity-50 pt-3 pb-3 pl-2 pr-2">
-            <h4 className="md:text-2xl xl:text-4xl text-center text-custom-white font-bold">{layoutTitle} </h4>
+          <div className="absolute top-[18%] bg-black bg-opacity-50 pt-3 pb-3 pl-2 pr-2">
+            <h4 className="md:text-2xl xl:text-3xl text-center text-custom-white font-bold">{layoutTitle} </h4>
           </div>
         )}
         <div 
           className={`bg-custom-white absolute py-[100px]  min-h-[20rem]  top-[30%] pl-34 pr-34 pt-14 2xl:w-[55%]  md:w-[80%] lg:w-[60%]  my-1`}
-        >
+          >
           {children}
           {sideContent && (
             <div className="xl:hidden pl-6 pr-10 w-full mt-10">

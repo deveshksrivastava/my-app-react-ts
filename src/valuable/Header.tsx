@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 import NavLinkTag from './pages/nav-link';
@@ -18,8 +18,13 @@ const Header = () => {
     setMenuVisible(false);
   };
   const currentPath = useLocation().pathname;
+  console.log(currentPath);
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const [clickedLabel, setClickedLabel] = useState(localStorage.getItem('label') || '');
+  const [clickedNavLabel, setClickedNavLabel] = useState(localStorage.getItem('navlabel') || '');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const navLinks: NavLinkProps[] = [
     {
       title: 'Home',
@@ -46,11 +51,11 @@ const Header = () => {
       dropdown: [
         {
           title: 'About US',
-          path: '/help/about-dap'
+          path: '/help/about-us'
         },
         {
           title: 'Report a US issue',
-          path: '/help/report-a-dap-issue'
+          path: '/help/report-a-us-issue'
         },
         {
           title: 'FAQS',
@@ -62,31 +67,52 @@ const Header = () => {
       title: 'Contact Us',
       path: '/contact',
       dropdown: undefined
-    },
-    {
-      title: 'logout',
-      onClick: handleLogout
     }
+
   ];
   const [menuVisible, setMenuVisible] = useState(false);
 
   const handleAvatarClick = () => {
     setMenuVisible(!menuVisible);
   };
-  const handleItemClick = (title: string) => {
+  const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+  const handleItemClick = (title: string, index: number) => {
+    localStorage.setItem('navlabel', title);
+    setClickedNavLabel(title);
+    setIsDropdownOpen(!isDropdownOpen);
+    setActiveIndex(index);
+    setActiveDropdown(activeDropdown === index ? null : index);
+  };
+  const handleItemtitleClick = (title: string) => {
     localStorage.setItem('label', title);
     setClickedLabel(title);
     setIsDropdownOpen(!isDropdownOpen);
   };
+
   useEffect(() => {
     setIsDropdownOpen(true);
   }, [clickedLabel]);
+
   const handleSubItemClick = (title: string) => {
     setClickedLabel(title);
     setIsDropdownOpen(false);
   };
-  console.log(clickedLabel);
 
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        closeDropdown();
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
   return (
     <div className=" justify-between bg-slate-100 shadow-md h-15 ">
       <div className="flex items-start justify-between px-2 py-2">
@@ -103,59 +129,65 @@ const Header = () => {
           <ul className="absolute   sm:right-5 right-0 mt-5 bg-white shadow-lg rounded-md">
             <li
               className="cursor-pointer py-2 px-4 hover:bg-gray-100 active:bg-gray-200"
-              onClick={() => handleItemClick('Profile')}
+              // onClick={() => handleItemClick('Profile')}
             >
               <Link to="/profile">Profile</Link>
             </li>
             {/* <li className="cursor-pointer py-2 px-4" onClick={() => handleItemClick('Settings')}>
-          Settings
-        </li> */}
+            Settings
+          </li> */}
             <li className="cursor-pointer py-2 px-4 hover:bg-gray-100 active:bg-gray-200" onClick={handleLogout}>
               Logout
             </li>
           </ul>
         )}
       </div>
-      <div className=" flex bg-site-color px-2 py-2  justify-center items-center" id="navbar">
+      <div className=" flex bg-site-color px-2 py-2  justify-center items-center" id="navbar" ref={dropdownRef}>
         <ul className="flex md:p-0 md:flex-row md:space-x-8 mt-0 mb-[3px] ">
-          {/* <NavLinkTag title={link.title} path={link.path} dropdown={link.dropdown} onClick={link.onClick}/> */}
+          {/* <NavLinkTag title={link.title} path={link.path} dropdown={link.dropdown} onClick={link.onClick}/>  */}
           {navLinks.map((link, index) => (
-            <li key={index} onClick={() => handleItemClick(link.title)}>
-              <NavLink
-                to={`${link.path}`}
-                className={`${currentPath === link.path && clickedLabel === link.title ? 'border-b-[4px] p-2  border-b-zinc-100 hover:text-white  bg-black bg-opacity-50 text-white' : clickedLabel === link.title && currentPath !== link.path ? 'border-b-[4px] p-2  border-b-zinc-100 hover:text-white  bg-black bg-opacity-50 text-white' : 'p-3 '}`}
-              >
-                {link.title}
-              </NavLink>
-              {link.dropdown && (
-                <div
-                  className={`w-full absolute left-0 mt-2 bg-white shadow-lg z-10 ${isDropdownOpen && clickedLabel === link.title ? '' : 'hidden'}`}
+            <>
+              <li key={index} onClick={() => handleItemtitleClick(link.title)}>
+                <NavLink
+                  to={`${link.path}`}
+                  className={`${
+                    currentPath === link.path && clickedLabel === link.title
+                      ? 'border-b-[4px] p-2  border-b-zinc-100 hover:text-white  bg-black bg-opacity-50 text-white'
+                      : clickedLabel === link.title && currentPath !== link.path
+                        ? 'border-b-[4px] p-2  border-b-zinc-100 hover:text-white  bg-black bg-opacity-50 text-white'
+                        : 'p-2 text-white hover:border-b-[4px]  hover:bg-black hover:bg-opacity-50 border-b-zinc-100 hover:text-white transition duration-10000 ease-in-out'
+                  }`}
                 >
-                  {link.dropdown.map((subNavLink, subIndex) => (
-                    <>
-                      <div key={subIndex} className="relative item-start">
+                  {link.title}
+                </NavLink>
+
+                {link.dropdown && (
+                  <div
+                    className={`w-full absolute left-0 mt-[10px] bg-white shadow-lg z-10 ${isDropdownOpen && clickedLabel === link.title ? '' : 'hidden'}`}
+                  >
+                    {link.dropdown.map((subNavLink, index) => (
+                      <div
+                        key={index}
+                        className={`relative item-start ${activeIndex === index && clickedNavLabel === subNavLink.title && 'hover:text-white  bg-black bg-opacity-50 text-white'} `}
+                      >
                         {subNavLink.path !== undefined && (
                           <section
-                            className={`text-center ${clickedLabel === 'Service' ? 'mr-[200px]' : clickedLabel === 'Help' ? 'mr-10' : ''}  underline cursor-pointer py-3 text-red-500`}
-                            onClick={() => handleSubItemClick(subNavLink.title)} // Assuming you have a function to handle subitem clicks
+                            className={`text-center ${clickedLabel === 'Service' ? 'mr-[200px]' : clickedLabel === 'Help' ? 'mr-10' : ''}  underline cursor-pointer py-3 text-red-500 `}
+                            onClick={() => handleItemClick(subNavLink.title, index)} // Assuming you have a function to handle subitem clicks
                           >
-                            <Link to={`${subNavLink.path}`} className={`p-2 text-black`}>
+                            <Link to={`${subNavLink.path}`} className={`p-2  text-black `}>
                               {subNavLink.title}
                             </Link>
                           </section>
                         )}
                       </div>
-                    </>
-                  ))}
-                </div>
-              )}
-            </li>
+                    ))}
+                  </div>
+                )}
+              </li>
+            </>
           ))}
         </ul>
-      </div>
-
-      <div>
-
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import usePageTitle from '../utils/hooks/usePageTitle';
 import LayoutWrapper from '../wrapper/layoutWrapper';
 import MyDialog from '../reuseable/mydialog';
@@ -27,7 +27,8 @@ const ServiceDetails=()=> {
   return (
     <>
         <Breadcrumbs currentLoc={id}/>
-        <LayoutWrapper
+
+         <LayoutWrapper
          coverImage={'/asserts/img/base.jpg'}
          layoutTitle=""
          sideContent
