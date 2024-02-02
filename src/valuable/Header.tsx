@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
 
+
 import NavLinkTag from './pages/nav-link';
 
 interface NavLinkProps {
@@ -25,6 +26,8 @@ const Header = () => {
   const [clickedNavLabel, setClickedNavLabel] = useState(localStorage.getItem('navlabel') || '');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+
   const navLinks: NavLinkProps[] = [
     {
       title: 'Home',
@@ -187,8 +190,10 @@ const Header = () => {
               </li>
             </>
           ))}
+
         </ul>
       </div>
+
     </div>
   );
 };

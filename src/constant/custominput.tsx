@@ -12,6 +12,7 @@ interface CustomInputProps {
     errorStyle?:string;
   }
  const CustomInput:React.FC<CustomInputProps> = ({label,type,id,name,onChange,classname,labelstyle,error,errorStyle}) => {
+
   const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
     onChange(id,e.target.value)
   }
@@ -24,8 +25,7 @@ interface CustomInputProps {
         id={id}
         name={name}
         onChange={handleChange}
-      />
-      
+      />      
       {error && <p className={`'mt-2 text-sm text-red-300' ${errorStyle}`}>{error}</p>}
     </>
   )

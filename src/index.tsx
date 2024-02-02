@@ -82,6 +82,7 @@ const AppLayout = () => {
           <Route path="/register" element={<Registration />} />
           <Route path="*" element={<Error />} />
         </Routes>
+
       </Router>
     </div>
   );
