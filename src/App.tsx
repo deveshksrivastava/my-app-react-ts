@@ -77,6 +77,7 @@ const MyComponent = () => {
           onSubmit={data => {
             console.log(data);
           }}
+          noValidate
         >
           <CustomInput
             id="email"

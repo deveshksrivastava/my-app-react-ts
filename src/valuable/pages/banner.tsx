@@ -3,35 +3,13 @@ import { FaAngleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import CustomButton from '../../constant/customButton';
 import logo from '../../images/file_files.png';
+import Accordion from '../../reuseable/accordian';
+
 
 interface AccordionProps {
   title: string;
   content: string;
 }
-
-const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
-  };
-
-  return (
-    <div className="w-full mx-auto mt-8">
-      <div className="border border-gray-300 rounded">
-        <div className="flex items-center justify-between px-4 py-2 cursor-pointer" onClick={toggleAccordion}>
-          <div className="font-semibold">{title}</div>
-          <div className="text-gray-600">{isOpen ? '▲' : '▼'}</div>
-        </div>
-        {isOpen && (
-          <div className="border-t border-gray-300 px-4 py-2">
-            <p>{content}</p>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
 interface BannerProps {
   path: string;
   accordionData: AccordionProps[];

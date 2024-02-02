@@ -13,10 +13,10 @@ const CustomTextArea:React.FC<CustomTextAreaProps> = ({label,id,name,onChange,cl
       onChange(id,e.target.value)
     }
     return (
-      <div className={`grid text-start px-20 `}>
+      <div className={` `}>
         {label && <label htmlFor={id}>{label}</label>}
         <textarea
-         className={`${classname} border outline-none p-1 w-full `}
+         className={`${classname}  `}
           id={id}
           name={name}
           onChange={handleChange}

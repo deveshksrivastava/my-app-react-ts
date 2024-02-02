@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../images/file_files.png';
+
 const Body = () => {
   console.log('home');
   return (
@@ -40,6 +41,7 @@ const Body = () => {
         </div>
       </div>
     </div>
+  
   );
 };
 

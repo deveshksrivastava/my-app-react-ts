@@ -8,9 +8,10 @@ const Protected = ({ children }:any) => {
   const user = localStorage.getItem('token');
   console.log(user);
   
-  if (!user) {
-    return <Navigate to={'/login'} replace={true}></Navigate>;
-  }
+  // if (!user) {
+  //   return <Navigate to={'/login'} replace={true}></Navigate>;
+  // }
+
   return (
     <>
     <Header />
