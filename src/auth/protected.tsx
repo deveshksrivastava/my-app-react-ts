@@ -11,6 +11,7 @@ const Protected = ({ children }:any) => {
   // if (!user) {
   //   return <Navigate to={'/login'} replace={true}></Navigate>;
   // }
+
   return (
     <>
     <Header />

@@ -24,8 +24,7 @@ interface CustomInputProps {
         id={id}
         name={name}
         onChange={handleChange}
-      />
-      
+      />      
       {error && <p className={`'mt-2 text-sm text-red-300' ${errorStyle}`}>{error}</p>}
     </>
   )

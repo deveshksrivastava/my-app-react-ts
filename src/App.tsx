@@ -82,7 +82,7 @@ const MyComponent = () => {
           <CustomInput
             id="email"
             name="email"
-            type="text"
+            type="email"
             label="Email Address"
             onChange={handleChange}
             labelstyle="block text-sm font-medium leading-6 text-gray-900 mb-2"

@@ -8,8 +8,6 @@ interface NavLinkProps {
 }
 
 const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown,onClick }) => {
-  
-  
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
