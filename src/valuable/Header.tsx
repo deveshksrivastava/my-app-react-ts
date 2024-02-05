@@ -25,6 +25,8 @@ const Header = () => {
   const [clickedNavLabel, setClickedNavLabel] = useState(localStorage.getItem('navlabel') || '');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+
   const navLinks: NavLinkProps[] = [
     {
       title: 'Home',
