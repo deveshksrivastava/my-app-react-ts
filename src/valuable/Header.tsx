@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
 
-
 import NavLinkTag from './pages/nav-link';
 
 interface NavLinkProps {
@@ -69,6 +68,11 @@ const Header = () => {
     {
       title: 'Contact Us',
       path: '/contact',
+      dropdown: undefined
+    },
+    {
+      title: 'Datasets',
+      path: '/datasets',
       dropdown: undefined
     }
 
@@ -193,7 +197,6 @@ const Header = () => {
 
         </ul>
       </div>
-
     </div>
   );
 };

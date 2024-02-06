@@ -16,6 +16,7 @@ import Profile from './valuable/profile';
 import ServiceDetails from './valuable/servicedetails';
 import HelpServices from './valuable/helpdetails';
 import Home from './valuable/home';
+import DataSets from './valuable/datasets';
 
 const AppLayout = () => {
   return (
@@ -79,10 +80,17 @@ const AppLayout = () => {
               </Protected>
             }
           />
+          <Route
+            path="/datasets"
+            element={
+              <Protected>
+                <DataSets />
+              </Protected>
+            }
+          />
           <Route path="/register" element={<Registration />} />
           <Route path="*" element={<Error />} />
         </Routes>
-
       </Router>
     </div>
   );

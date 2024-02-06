@@ -8,7 +8,8 @@ const Breadcrumbs = (props: BreadCrumbProps) => {
   console.log('bg', currentLoc);
   const loc = useLocation().pathname;
   const [location, setLocation] = useState<string | null>(null);
-
+  
+  
   useEffect(() => {
     const regex = /\/(\w+)\//;
 

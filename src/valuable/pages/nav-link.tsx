@@ -8,7 +8,6 @@ interface NavLinkProps {
 }
 
 const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown,onClick }) => {
-
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -76,7 +75,6 @@ const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown,onClick }) =
           {dropdown.map((subNavLink, index) => (            
             
             <div className='relative item-start '>
-
             {subNavLink?.path !== undefined && 
               <section
               key={index}
@@ -91,7 +89,6 @@ const NavLinkTag: React.FC<NavLinkProps> = ({ path, title, dropdown,onClick }) =
               </section>
               }
             </div>
-
           ))}
         </div>
       )}
