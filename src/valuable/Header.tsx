@@ -69,6 +69,11 @@ const Header = () => {
       title: 'Contact Us',
       path: '/contact',
       dropdown: undefined
+    },
+    {
+      title: 'Datasets',
+      path: '/datasets',
+      dropdown: undefined
     }
 
   ];
@@ -174,7 +179,7 @@ const Header = () => {
                       >
                         {subNavLink.path !== undefined && (
                           <section
-                            className={`text-center ${clickedLabel === 'Service' ? 'mr-20' : clickedLabel === 'Help' ? 'ml-20' : ''}  underline cursor-pointer py-3 text-red-500 `}
+                            className={`text-center ${clickedLabel === 'Service' ? 'mr-[200px]' : clickedLabel === 'Help' ? 'mr-10' : ''}  underline cursor-pointer py-3 text-red-500 `}
                             onClick={() => handleItemClick(subNavLink.title, index)} // Assuming you have a function to handle subitem clicks
                           >
                             <Link to={`${subNavLink.path}`} className={`p-2  text-black `}>
