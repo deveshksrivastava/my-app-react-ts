@@ -109,3 +109,6 @@ It should have 4 entities
 import './index.css';
 Now, you should be able to use Tailwind CSS classes in your React components. Remember to run your build command (like npm run build or npm start) to see the changes.
 ````
+## Azure app registration process
+
+- [#002](https://www.youtube.com/watch?v=4pH5spE2Yss&t=421s) **Eslint Configration .**
