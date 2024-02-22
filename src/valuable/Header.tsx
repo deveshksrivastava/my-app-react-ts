@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import LanguageDropdown from '../reuseable/languagedropdown';
+import { useTranslation } from 'react-i18next';
 
 import NavLinkTag from './pages/nav-link';
 
 interface NavLinkProps {
+  label?:string;
   path?: string;
   title: string;
   dropdown?: NavLinkProps[];
@@ -11,6 +14,7 @@ interface NavLinkProps {
 }
 
 const Header = () => {
+  const {t}=useTranslation();
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.clear();
@@ -29,48 +33,58 @@ const Header = () => {
 
   const navLinks: NavLinkProps[] = [
     {
-      title: 'Home',
+      title:"Home",
+      label: `${t("Home")}`,
       path: '/',
       dropdown: undefined
     },
     {
+      label:`${t("Service")}`,
       title: 'Service',
       path: '#',
       dropdown: [
         {
+          label:`${t("serviced1")}`,
           title: 'Request Advanced Analytics Enviornment',
           path: '/service/advance-analytics-enviroment'
         },
         {
+          label:`${t("serviced2")}`,
           title: 'Request Data Upload',
           path: '/service/data-upload'
         }
       ]
     },
     {
+      label:`${t("Help")}`,
       title: 'Help',
       path: '#',
       dropdown: [
         {
+          label:`${t("helpd1")}`,
           title: 'About US',
           path: '/help/about-us'
         },
         {
+          label:`${t("helpd2")}`,
           title: 'Report a US issue',
           path: '/help/report-a-us-issue'
         },
         {
+          label:`${t("helpd3")}`,
           title: 'FAQS',
           path: '/help/faqs'
         }
       ]
     },
     {
+      label:`${t("Contact-Us")}`,
       title: 'Contact Us',
       path: '/contact',
       dropdown: undefined
     },
     {
+      label:`${t("Datasets")}`,
       title: 'Datasets',
       path: '/datasets',
       dropdown: undefined
@@ -125,15 +139,19 @@ const Header = () => {
       <div className="flex items-start justify-between px-2 py-2">
         <img src="/asserts/img/mso-gap.png" className="w-40" alt="Logo" />
 
-        <div className="mr-4" onClick={handleAvatarClick}>
+        <div className="mr-4 flex gap-4 items-center" >
+          <LanguageDropdown />
+          
           <img
             src="https://e7.pngegg.com/pngimages/123/735/png-clipart-human-icon-illustration-computer-icons-physician-login-medicine-user-avatar-miscellaneous-logo.png"
             alt="Avatar"
             className="w-10 h-10 rounded-full"
+            onClick={handleAvatarClick}
           />
+
         </div>
         {menuVisible && (
-          <ul className="absolute   sm:right-5 right-0 mt-5 bg-white shadow-lg rounded-md">
+          <ul className="absolute z-10  sm:right-5 right-0 mt-5 bg-white shadow-lg rounded-md">
             <li
               className="cursor-pointer py-2 px-4 hover:bg-gray-100 active:bg-gray-200"
               // onClick={() => handleItemClick('Profile')}
@@ -165,7 +183,7 @@ const Header = () => {
                         : 'p-2 text-white hover:border-b-[4px]  hover:bg-black hover:bg-opacity-50 border-b-zinc-100 hover:text-white transition duration-10000 ease-in-out'
                   }`}
                 >
-                  {link.title}
+                  {link.label}
                 </NavLink>
 
                 {link.dropdown && (
@@ -183,7 +201,7 @@ const Header = () => {
                             onClick={() => handleItemClick(subNavLink.title, index)} // Assuming you have a function to handle subitem clicks
                           >
                             <Link to={`${subNavLink.path}`} className={`p-2  text-black `}>
-                              {subNavLink.title}
+                              {subNavLink.label}
                             </Link>
                           </section>
                         )}

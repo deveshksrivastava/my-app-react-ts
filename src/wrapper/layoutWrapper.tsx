@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import MyCard from '../reuseable/card';
 import MyDialog from '../reuseable/mydialog';
 import '../App.css'
+import { useTranslation } from 'react-i18next';
+
 interface LayoutProps {
   children: any;
   layoutTitle?: string;
@@ -19,6 +21,9 @@ interface subItem {
 const LayoutWrapper: React.FC<LayoutProps> = props => {
   const { layoutTitle, coverImage, children, sideContent, subContentItem } = props;
   const { id } = useParams();
+  const { t } = useTranslation();
+
+  
   const [aboutStatus, setAboutStatus] = useState<boolean>(false);
   const handleAboutClick = () => {
     setAboutStatus(true);
@@ -36,6 +41,7 @@ const LayoutWrapper: React.FC<LayoutProps> = props => {
   };
   return (
     <div className="relative flex flex-col min-h-screen  w-full ">
+  {/* <p>{t('Menu')}</p> */}
       <div className="w-full ">
         {coverImage ? (
           <figure>

@@ -27,6 +27,7 @@ const Registration: React.FC = () => {
   });
   const handleInputChange = (id: string, value: string) => {
     setFormData({ ...formData, [id]: value });
+    console.log("formData after update:", formData);
   };
   const [errors, setErrors] = useState<Partial<RegistrationFormData>>({});
 
@@ -240,7 +241,7 @@ const Registration: React.FC = () => {
                       text="Register"
                       classname="flex w-1/2 m-auto justify-center items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                       icon={<FaAngleRight /> }
-                      />
+          />
           </div>
         </form>
     </div>

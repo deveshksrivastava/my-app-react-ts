@@ -17,8 +17,15 @@ import ServiceDetails from './valuable/servicedetails';
 import HelpServices from './valuable/helpdetails';
 import Home from './valuable/home';
 import DataSets from './valuable/datasets';
+import i18n from './i18n';
 
 const AppLayout = () => {
+  useEffect(() => {
+    const language = localStorage.getItem("I18N_LANGUAGE");
+    if (language) {
+      i18n.changeLanguage(language);
+    }
+  }, []);
   return (
     <div>
       <Router>
