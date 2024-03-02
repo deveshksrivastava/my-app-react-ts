@@ -150,24 +150,40 @@ const Header = () => {
           />
 
         </div>
-        {menuVisible && (
-          <ul className="absolute z-10  sm:right-5 right-0 mt-5 bg-white shadow-lg rounded-md">
+        {/* {menuVisible && (
+          <ul className="absolute z-10  sm:right-5 right-0 mt-10 bg-white shadow-lg rounded-md">
             <li
               className="cursor-pointer py-2 px-4 hover:bg-gray-100 active:bg-gray-200"
               // onClick={() => handleItemClick('Profile')}
             >
               <Link to="/profile">Profile</Link>
             </li>
-            {/* <li className="cursor-pointer py-2 px-4" onClick={() => handleItemClick('Settings')}>
-            Settings
-          </li> */}
+          
             <li className="cursor-pointer py-2 px-4 hover:bg-gray-100 active:bg-gray-200" onClick={handleLogout}>
               Logout
             </li>
           </ul>
-        )}
+        )} */}
       </div>
-      <div className=" flex bg-site-color px-2 py-2  justify-center items-center" id="navbar" ref={dropdownRef}>
+      <div className='relative'>
+        <div className=" absolute right-0 z-20 top-0 w-auto bg-white element  "  >
+        {menuVisible && (
+          <ul className="z-10  sm:right-5   ">
+
+            <li
+              className="cursor-pointer py-2 px-4 hover:bg-gray-100 active:bg-gray-200"
+              // onClick={() => handleItemClick('Profile')}
+              >
+              <Link to="/profile">Profile</Link>
+            </li>
+          
+            <li className="cursor-pointer py-2 px-4 hover:bg-gray-100 active:bg-gray-200" onClick={handleLogout}>
+              Logout
+            </li>
+          </ul>
+        )} 
+        </div>
+        <div className=" flex bg-site-color px-2 py-2  justify-center items-center" id="navbar" ref={dropdownRef}>
         <ul className="flex md:p-0 md:flex-row md:space-x-8 mt-0 mb-[3px] ">
           {/* <NavLinkTag title={link.title} path={link.path} dropdown={link.dropdown} onClick={link.onClick}/>  */}
           {navLinks.map((link, index) => (
@@ -214,6 +230,7 @@ const Header = () => {
           ))}
 
         </ul>
+      </div>
       </div>
     </div>
   );
