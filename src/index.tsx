@@ -18,6 +18,7 @@ import HelpServices from './valuable/helpdetails';
 import Home from './valuable/home';
 import DataSets from './valuable/datasets';
 import i18n from './i18n';
+import Product from './valuable/product';
 
 const AppLayout = () => {
   useEffect(() => {
@@ -92,6 +93,14 @@ const AppLayout = () => {
             element={
               <Protected>
                 <DataSets />
+              </Protected>
+            }
+          />
+          <Route
+            path="/product"
+            element={
+              <Protected>
+                <Product />
               </Protected>
             }
           />

@@ -25,10 +25,16 @@ const Header = () => {
   console.log(currentPath);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdown = useRef<HTMLDivElement>(null);
   const [clickedLabel, setClickedLabel] = useState(localStorage.getItem('label') || '');
   const [clickedNavLabel, setClickedNavLabel] = useState(localStorage.getItem('navlabel') || '');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [menu, setMenu] = useState<any>(false);
+
+    const toggle = () => {
+    setMenu(!menu);
+  };
 
 
   const navLinks: NavLinkProps[] = [
@@ -88,12 +94,19 @@ const Header = () => {
       title: 'Datasets',
       path: '/datasets',
       dropdown: undefined
+    },
+    {
+      label:`${t("Product")}`,
+      title: 'Product',
+      path: '/product',
+      dropdown: undefined
     }
 
   ];
   const [menuVisible, setMenuVisible] = useState(false);
 
   const handleAvatarClick = () => {
+
     setMenuVisible(!menuVisible);
   };
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
@@ -109,6 +122,7 @@ const Header = () => {
     setClickedLabel(title);
     setIsDropdownOpen(!isDropdownOpen);
   };
+  
 
   useEffect(() => {
     setIsDropdownOpen(true);
@@ -118,24 +132,39 @@ const Header = () => {
     setClickedLabel(title);
     setIsDropdownOpen(false);
   };
-
+  // console.log(menuVisible);
+  
   const closeDropdown = () => {
     setIsDropdownOpen(false);
+    
   };
+  const togglePopup = (e: React.MouseEvent<HTMLDivElement>) => {
+    // e.stopPropagation();
+    if(menuVisible === true)
+    setMenuVisible(!menuVisible);
+  };
+  const hidePopup = () => {
+    if(menuVisible === true)
+    setMenuVisible(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+     
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         closeDropdown();
       }
     };
 
     document.addEventListener('click', handleClickOutside);
+    document.addEventListener('click', hidePopup);
     return () => {
       document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('click', hidePopup);
     };
   }, []);
   return (
-    <div className=" justify-between bg-slate-100 shadow-md h-15 ">
+    <div className=" justify-between bg-slate-100 shadow-md h-15 " onClick={togglePopup} >
       <div className="flex items-start justify-between px-2 py-2">
         <img src="/asserts/img/mso-gap.png" className="w-40" alt="Logo" />
 
@@ -168,7 +197,8 @@ const Header = () => {
       <div className='relative'>
         <div className=" absolute right-0 z-20 top-0 w-auto bg-white element  "  >
         {menuVisible && (
-          <ul className="z-10  sm:right-5   ">
+          <div onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}>
+          <ul className="z-10  sm:right-5   " >
 
             <li
               className="cursor-pointer py-2 px-4 hover:bg-gray-100 active:bg-gray-200"
@@ -181,6 +211,7 @@ const Header = () => {
               Logout
             </li>
           </ul>
+          </div>
         )} 
         </div>
         <div className=" flex bg-site-color px-2 py-2  justify-center items-center" id="navbar" ref={dropdownRef}>
