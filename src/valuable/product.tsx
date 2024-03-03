@@ -72,12 +72,12 @@ interface MainProps {}
 
     <div>
         <Breadcrumbs />
-        <div className="flex p-20 w-full h-full gap-10">
-            <div className="flex flex-col items-start w-1/3 gap-10">
+        <div className="lg:flex  lg:p-10 py-10 w-full h-full gap-10">
+            <div className="flex flex-col items-start lg:w-1/3 w-full gap-10 p-2">
                 <h1 className="text-3xl font-bold text-black-800">Search results</h1>
                 <SidePannel />
             </div>
-            <div className="flex flex-col items-center w-2/3 gap-10">
+            <div className="flex flex-col items-center lg:w-2/3 gap-5 p-2">
                 <div
                 className="flex flex-row items-center w-full"
                 onKeyDown={handleKeyDown}
@@ -102,7 +102,7 @@ interface MainProps {}
                     <Card item={item} key={index} />
                 ))}
                 </section>
-                <div className="flex justify-center items-center mt-4">
+                <div className="flex justify-center items-center mb-6">
                 {Array.from({ length: totalPages }, (_, index) => (
                     <div
                     key={index}
@@ -116,7 +116,7 @@ interface MainProps {}
                 ))}
                 </div>
             </div>
-            </div>
+        </div>
     </div>
   )
 }

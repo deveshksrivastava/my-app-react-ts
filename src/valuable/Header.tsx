@@ -165,8 +165,8 @@ const Header = () => {
   }, []);
   return (
     <div className=" justify-between bg-slate-100 shadow-md h-15 " onClick={togglePopup} >
-      <div className="flex items-start justify-between px-2 py-2">
-        <img src="/asserts/img/mso-gap.png" className="w-40" alt="Logo" />
+      <div className="flex lg:items-start justify-between px-2 py-2 items-center">
+        <img src="/asserts/img/mso-gap.png" className="md:w-40 w-20" alt="Logo" />
 
         <div className="mr-4 flex gap-4 items-center" >
           <LanguageDropdown />
@@ -215,7 +215,7 @@ const Header = () => {
         )} 
         </div>
         <div className=" flex bg-site-color px-2 py-2  justify-center items-center" id="navbar" ref={dropdownRef}>
-        <ul className="flex md:p-0 md:flex-row md:space-x-8 mt-0 mb-[3px] ">
+        <ul className="flex md:p-0 md:flex-row md:space-x-8 mt-0 mb-[3px] lg:flex-nowrap flex-wrap md:gap-0  gap-3">
           {/* <NavLinkTag title={link.title} path={link.path} dropdown={link.dropdown} onClick={link.onClick}/>  */}
           {navLinks.map((link, index) => (
             <>
