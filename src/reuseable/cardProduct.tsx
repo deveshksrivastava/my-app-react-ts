@@ -29,6 +29,8 @@ const Card: React.FC<CardProps> = ({ item,index,onclick }) => {
       {moment(item?.createdDate).format("DD/MM/YYYY")}
     </div>
     <div className="rounded text-black-800">{item?.description}</div>
+    <hr className="mt-4"/>
+    
   </article>
   );
 };

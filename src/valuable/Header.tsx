@@ -100,6 +100,12 @@ const Header = () => {
       title: 'Product',
       path: '/product',
       dropdown: undefined
+    },
+    {
+      label:`${t("Product-new")}`,
+      title: 'Product-new',
+      path: '/product-new',
+      dropdown: undefined
     }
 
   ];
