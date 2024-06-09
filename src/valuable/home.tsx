@@ -2,6 +2,7 @@ import React from 'react';
 import MyCard from '../reuseable/card';
 import LayoutWrapper from '../wrapper/layoutWrapper';
 import { useTranslation } from 'react-i18next';
+import FileUpload from '../fileUpload';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -34,6 +35,7 @@ const Home = () => {
               }
             />
           </div>
+          <FileUpload />
           </div>
     </LayoutWrapper>
   </>

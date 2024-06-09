@@ -9,7 +9,7 @@ import Contact from './valuable/contact';
 import Services from './valuable/service';
 import Help from './valuable/help';
 import Registration from './registration';
-import Login from './app';
+// import Login from './app';
 import Protected from './auth/protected';
 import Header from './valuable/header';
 import Profile from './valuable/profile';
@@ -20,6 +20,8 @@ import DataSets from './valuable/datasets';
 import i18n from './i18n';
 import Product from './valuable/product';
 import ProductNew from './valuable/product-new';
+import RegistrationNew from './2024-June_Interview-prep/registation';
+import Regestration1 from './2024-June_Interview-prep/Regestration1';
 
 const AppLayout = () => {
   useEffect(() => {
@@ -29,10 +31,10 @@ const AppLayout = () => {
     }
   }, []);
   return (
-    <div>
+    <div className="relative min-h-[100vh]">
       <Router>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/login" element={<Login />} /> */}
           <Route
             path="/"
             element={
@@ -113,10 +115,18 @@ const AppLayout = () => {
               </Protected>
             }
           />
+          <Route
+            path="/registeration"
+            element={
+              <Protected>
+                <Regestration1 />
+              </Protected>
+            }
+          />
           <Route path="/register" element={<Registration />} />
           <Route path="*" element={<Error />} />
         </Routes>
-      </Router>
+      </Router> 
     </div>
   );
 };
@@ -125,5 +135,6 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <AppLayout />
+    {/* <RegistrationNew /> */}
   </React.StrictMode>
 );
