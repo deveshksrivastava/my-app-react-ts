@@ -57,7 +57,16 @@ const HelpServices = () => {
           {
             path: `/help/faqs`,
             title: 'FAQs'
+          },
+          {
+            path: `/help/faqs`,
+            title: 'FAQs'
+          },
+                    {
+            path: `/help/faqs`,
+            title: 'FAQs'
           }
+
         ]}
       >
         {id?.includes('faqs') && (

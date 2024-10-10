@@ -22,6 +22,11 @@ import Product from './valuable/product';
 import ProductNew from './valuable/product-new';
 import RegistrationNew from './2024-June_Interview-prep/registation';
 import Regestration1 from './2024-June_Interview-prep/Regestration1';
+import Registration2 from './2024-June_Interview-prep/Registration2';
+import { TodoApp } from './2024-June_Interview-prep/TodoApp';
+import { TodoAppJune } from './2024-June_Interview-prep/TodoApp-july24'
+import { Netflix } from './2024-June_Interview-prep/Netflix';
+
 
 const AppLayout = () => {
   useEffect(() => {
@@ -126,7 +131,7 @@ const AppLayout = () => {
           <Route path="/register" element={<Registration />} />
           <Route path="*" element={<Error />} />
         </Routes>
-      </Router> 
+      </Router>
     </div>
   );
 };
@@ -136,5 +141,9 @@ root.render(
   <React.StrictMode>
     <AppLayout />
     {/* <RegistrationNew /> */}
+    {/* <Registration2 />
+    <TodoApp />
+    <Netflix /> */}
+    <TodoAppJune />
   </React.StrictMode>
 );

@@ -109,7 +109,7 @@ const Regestration1 = () => {
       </ul>
       {/* {JSON.stringify(userslist)} */}
 
-      <UserClass fname="devesh" city="london" />
+      {/* <UserClass fname="devesh" city="london" /> */}
       
     </div>
   )

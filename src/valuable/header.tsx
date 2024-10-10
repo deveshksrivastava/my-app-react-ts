@@ -45,13 +45,66 @@ const Header = () => {
       dropdown: undefined
     },
     {
+      label:`${t("Interview")}`,
+      title: 'Product-new',
+      path: '/product-new',
+      dropdown: [
+        {
+          label:`${t("serviced1")}`,
+          title: 'Interview 1',
+          path: '/register'
+        },
+        {
+          label:`${t("serviced2")}`,
+          title: 'Interview 2',
+          path: '/service/data-upload'
+        }, {
+          label:`${t("serviced1")}`,
+          title: 'Interview 1',
+          path: '/service/advance-analytics-enviroment'
+        },
+        {
+          label:`${t("serviced2")}`,
+          title: 'Interview 2',
+          path: '/service/data-upload'
+        }, {
+          label:`${t("serviced1")}`,
+          title: 'Interview 1',
+          path: '/service/advance-analytics-enviroment'
+        },
+        {
+          label:`${t("serviced2")}`,
+          title: 'Interview 2',
+          path: '/service/data-upload'
+        }, {
+          label:`${t("serviced1")}`,
+          title: 'Interview 1',
+          path: '/service/advance-analytics-enviroment'
+        },
+        {
+          label:`${t("serviced2")}`,
+          title: 'Interview 2',
+          path: '/service/data-upload'
+        }, {
+          label:`${t("serviced1")}`,
+          title: 'Interview 1',
+          path: '/service/advance-analytics-enviroment'
+        },
+        {
+          label:`${t("serviced2")}`,
+          title: 'Interview 2',
+          path: '/service/data-upload'
+        }
+      ]
+    },
+    {
       label:`${t("Service")}`,
       title: 'Service',
       path: '#',
       dropdown: [
         {
           label:`${t("serviced1")}`,
-          title: 'Request Advanced Analytics Enviornment',
+          title: 'Interview 1',
           path: '/service/advance-analytics-enviroment'
         },
         {
@@ -81,6 +134,52 @@ const Header = () => {
           title: 'FAQS',
           path: '/help/faqs'
         }
+        ,
+        {
+          label:`${t("helpd3")}`,
+          title: 'FAQS',
+          path: '/help/faqs'
+        },        {
+          label:`${t("helpd1")}`,
+          title: 'About US',
+          path: '/help/about-us'
+        },
+        {
+          label:`${t("helpd2")}`,
+          title: 'Report a US issue',
+          path: '/help/report-a-us-issue'
+        },
+        {
+          label:`${t("helpd3")}`,
+          title: 'FAQS',
+          path: '/help/faqs'
+        }
+        ,
+        {
+          label:`${t("helpd3")}`,
+          title: 'FAQS',
+          path: '/help/faqs'
+        },        {
+          label:`${t("helpd1")}`,
+          title: 'About US',
+          path: '/help/about-us'
+        },
+        {
+          label:`${t("helpd2")}`,
+          title: 'Report a US issue',
+          path: '/help/report-a-us-issue'
+        },
+        {
+          label:`${t("helpd3")}`,
+          title: 'FAQS',
+          path: '/help/faqs'
+        }
+        ,
+        {
+          label:`${t("helpd3")}`,
+          title: 'FAQS',
+          path: '/help/faqs'
+        }
       ]
     },
     {
@@ -99,12 +198,6 @@ const Header = () => {
       label:`${t("Product")}`,
       title: 'Product',
       path: '/product',
-      dropdown: undefined
-    },
-    {
-      label:`${t("Product-new")}`,
-      title: 'Product-new',
-      path: '/product-new',
       dropdown: undefined
     }
 
@@ -241,23 +334,28 @@ const Header = () => {
 
                 {link.dropdown && (
                   <div
-                    className={`w-full absolute left-0 mt-[10px] bg-white shadow-lg z-10 ${isDropdownOpen && clickedLabel === link.title ? '' : 'hidden'}`}
+                    className={`w-full absolute left-0 mt-[10px] bg-white shadow-lg z-10 grid grid-cols-8 ${isDropdownOpen && clickedLabel === link.title ? '' : 'hidden'}`}
                   >
                     {link.dropdown.map((subNavLink, index) => (
-                      <div
-                        key={index}
-                        className={`relative item-start ${activeIndex === index && clickedNavLabel === subNavLink.title && 'hover:text-white  bg-black bg-opacity-50 text-white'} `}
-                      >
-                        {subNavLink.path !== undefined && (
-                          <section
-                            className={`text-center ${clickedLabel === 'Service' ? 'mr-[200px]' : clickedLabel === 'Help' ? 'mr-10' : ''}  underline cursor-pointer py-3 text-red-500 `}
-                            onClick={() => handleItemClick(subNavLink.title, index)} // Assuming you have a function to handle subitem clicks
-                          >
-                            <Link to={`${subNavLink.path}`} className={`p-2  text-black `}>
-                              {subNavLink.label}
-                            </Link>
-                          </section>
-                        )}
+                      // <div
+                      //   key={index}
+                      //   className={`relative item-start ${activeIndex === index && clickedNavLabel === subNavLink.title && 'hover:text-white  bg-black bg-opacity-50 text-white'} `}
+                      // >
+                      //   {subNavLink.path !== undefined && (
+                      //     <section
+                      //       className={`text-center ${clickedLabel === 'Service' ? 'mr-[200px]' : clickedLabel === 'Help' ? 'mr-10' : ''}  underline cursor-pointer py-3 text-red-500 `}
+                      //       onClick={() => handleItemClick(subNavLink.title, index)} // Assuming you have a function to handle subitem clicks
+                      //     >
+                      //       <Link to={`${subNavLink.path}`} className={`p-2  text-black `}>
+                      //         {subNavLink.label}
+                      //       </Link>
+                      //     </section>
+                      //   )}
+                      // </div>
+                      <div className=''>
+                        <Link to={`${subNavLink.path}`} className={`p-2  text-black `}>
+                        {subNavLink.title}
+                        </Link>
                       </div>
                     ))}
                   </div>
