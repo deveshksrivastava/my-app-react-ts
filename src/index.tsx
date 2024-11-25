@@ -26,6 +26,7 @@ import Registration2 from './2024-June_Interview-prep/Registration2';
 import { TodoApp } from './2024-June_Interview-prep/TodoApp';
 import { TodoAppJune } from './2024-June_Interview-prep/TodoApp-july24'
 import { Netflix } from './2024-June_Interview-prep/Netflix';
+import CoutryStateDDl from './2024-June_Interview-prep/performance/skills/country-state';
 
 
 const AppLayout = () => {
@@ -37,101 +38,47 @@ const AppLayout = () => {
   }, []);
   return (
     <div className="relative min-h-[100vh]">
+      {/* <Header /> */}
       <Router>
         <Routes>
+
           {/* <Route path="/login" element={<Login />} /> */}
-          <Route
-            path="/"
-            element={
-              <Protected>
-                <Home />
-              </Protected>
-            }
-          />
-          <Route
-            path="/service"
-            element={
-              <Protected>
-                <Services />
-              </Protected>
-            }
-          />
-          <Route
-            path="/help"
-            element={
-              <Protected>
-                <Help />
-              </Protected>
-            }
-          />
-          <Route
-            path="/service/:id"
-            element={
-              <Protected>
-                <ServiceDetails />
-              </Protected>
-            }
-          />
-          <Route
-            path="/help/:id"
-            element={
-              <Protected>
-                <HelpServices />
-              </Protected>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <Protected>
-                <Contact />
-              </Protected>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <Protected>
-                <Profile />
-              </Protected>
-            }
-          />
-          <Route
-            path="/datasets"
-            element={
-              <Protected>
-                <DataSets />
-              </Protected>
-            }
-          />
-          <Route
-            path="/product"
-            element={
-              <Protected>
-                <Product />
-              </Protected>
-            }
-          />
-          <Route
-            path="/product-new"
-            element={
-              <Protected>
-                <ProductNew />
-              </Protected>
-            }
-          />
-          <Route
-            path="/registeration"
-            element={
-              <Protected>
-                <Regestration1 />
-              </Protected>
-            }
-          />
-          <Route path="/register" element={<Registration />} />
-          <Route path="*" element={<Error />} />
+          <Route path="/" element={<Protected> <Home /></Protected>} />
+          <Route path="/help" element={<Protected> <Help /></Protected>} />
+          <Route path="/help/:id" element={<Protected> <Regestration1 /></Protected>} />
+          <Route path="/service" element={<Protected> <Services /></Protected>} />
+          <Route path="/service/:id" element={<Protected> <ServiceDetails /></Protected>} />
+          <Route path="/contact" element={<Protected> <Contact /></Protected>} />
+          <Route path="/profile" element={<Protected> <Profile /></Protected>} />
+          <Route path="/datasets" element={<Protected> <DataSets /></Protected>} />
+          <Route path="/product" element={<Protected> <Product /></Protected>} />
+          <Route path="/product-new" element={<Protected> <ProductNew /></Protected>} />
+          <Route path="/registeration" element={<Protected> <Regestration1 /></Protected>} />
+          <Route path="/register" element={<Protected> <Registration /></Protected>} />
+          <Route path="/ddlcountrystate" element={<Protected> <CoutryStateDDl /></Protected>} />
+          <Route path="/registeration-new" element={<Protected> <RegistrationNew /></Protected>} />
+          <Route path="/registeration2" element={<Protected> <Registration2 /></Protected>} />
+          <Route path="/todoapp" element={<Protected> <TodoApp /></Protected>} />
+          <Route path="/netflix" element={<Protected> <Netflix /></Protected>} />
+          <Route path="/todoappjune" element={<Protected> <TodoAppJune /></Protected>} />
+          <Route path="/embedededpage" element={<Protected> <EmbeddedPage /></Protected>} />
+          <Route path="*" element={<Protected> <Error /></Protected>} />
         </Routes>
       </Router>
+    </div>
+  );
+};
+
+const EmbeddedPage = () => {
+  return (
+    <div style={{ height: '100vh', width: '100%' }}>
+      <iframe
+        src="https://techbluehost.sharepoint.com/:u:/s/zxzx/ESFGgXOnb2hBmLMj2EW9t1wB7fExZhdGDY-9IpwEY8Lg5A?e=lAtne5" // replace with the URL you want to embed
+        title="Embedded Page"
+        style={{ border: 'none', width: '100%', height: '100%' }}
+        allowFullScreen
+      />
+      ssdsdsd
     </div>
   );
 };
@@ -140,10 +87,5 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <AppLayout />
-    {/* <RegistrationNew /> */}
-    {/* <Registration2 />
-    <TodoApp />
-    <Netflix /> */}
-    <TodoAppJune />
   </React.StrictMode>
 );

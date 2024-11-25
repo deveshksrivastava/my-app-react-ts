@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { countries } from '../../data/countries';
+import { countries } from '../../../valuable/data/countries';
 // create json object for country state and city data
 
-export default function App() {
+export default function CoutryStateDDl() {
   const [selectedCountry, setSelectedCountry] = useState<string>('');
   const [selectedState, setSelectedState] = useState<string>('');
   // const countries=[...countries];

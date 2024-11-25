@@ -23,7 +23,7 @@ const LayoutWrapper: React.FC<LayoutProps> = props => {
   const { id } = useParams();
   const { t } = useTranslation();
 
-  
+
   const [aboutStatus, setAboutStatus] = useState<boolean>(false);
   const handleAboutClick = () => {
     setAboutStatus(true);
@@ -41,11 +41,12 @@ const LayoutWrapper: React.FC<LayoutProps> = props => {
   };
   return (
     <div className="relative flex flex-col min-h-screen  w-full ">
-  {/* <p>{t('Menu')}</p> */}
+      {/* <p>{t('Menu')}</p> */}
       <div className="w-full ">
         {coverImage ? (
           <figure>
-            <img src={coverImage} alt="" className="w-full h-[20rem] object-cover" />
+            <img src={coverImage} alt="" className="w-full min-h-screen object-cover" />
+            <div className="absolute inset-0 bg-black opacity-60"></div>
           </figure>
         ) : (
           <div className="w-full h-[25rem] bg-gray-200"></div>
@@ -53,13 +54,13 @@ const LayoutWrapper: React.FC<LayoutProps> = props => {
       </div>
       <div className="flex justify-center  ">
         {layoutTitle && (
-          <div className="absolute top-[18%] bg-black bg-opacity-50 pt-3 pb-3 pl-2 pr-2">
-            <h4 className="md:text-2xl xl:text-3xl text-center text-custom-white font-bold">{layoutTitle} </h4>
+          <div className="absolute top-[28%] bg-black bg-opacity-50 pt-3 pb-3 pl-2 pr-2">
+            <h4 className="text-2xl md:text-4xl xl:text-6xl text-center text-custom-white font-bold">{layoutTitle} </h4>
           </div>
         )}
-        <div 
+        {/* <div
           className={`bg-custom-white absolute py-[100px]  min-h-[20rem]  top-[30%] pl-34 pr-34 pt-14 2xl:w-[55%]  md:w-[80%] lg:w-[60%]  my-1`}
-          >
+        >
           {children}
           {sideContent && (
             <div className="xl:hidden pl-6 pr-10 w-full mt-10">
@@ -96,7 +97,7 @@ const LayoutWrapper: React.FC<LayoutProps> = props => {
               )}
             </div>
           )}
-        </div>
+        </div> */}
         {sideContent && (
           <div className="absolute hidden xl:block xl:w-[20%] right-[1rem] mt-10">
             {subContentItem?.map((item: subItem) =>

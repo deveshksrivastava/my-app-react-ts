@@ -8,15 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'site-color': prod ? '#75FF33': '#FF0000',
+        'site-color': prod ? '#75FF33' : '#2979FF',
         'custom-blue': '#1DA1F2',
         'custom-green': '#17BF63',
-        'custom-red': '#E0245E',
-        'custom-white':'#FFFFFF'
+        'custom-red': '#512DA8',
+        'custom-white': '#FFFFFF',
+        'menu-bar': '#EAEEF0'
       },
-      backgroundImage:{
-        "banner-logo":"url('/src/images/main_banner.jpg')",
-        "mso-logo":"url('/src/images/main_banner1.jpg')",
+      backgroundImage: {
+        "banner-logo": "url('/src/images/main_banner.jpg')",
+        "mso-logo": "url('/src/images/main_banner1.jpg')",
       }
     }
   },

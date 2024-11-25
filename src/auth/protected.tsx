@@ -14,9 +14,9 @@ const Protected = ({ children }:any) => {
 
   return (
     <>
-    <Header />
-    {children}
-    <Footer />
+      <Header />
+        {children}
+      <Footer />
     </>
     ) ;
 };
