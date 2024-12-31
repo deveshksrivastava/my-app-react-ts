@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { countries } from '../../../valuable/data/countries';
-import { Button, buttonVariants } from "../../../components/ui/button";
+import { countries } from '../../valuable/data/countries';
+import { Button, buttonVariants } from "../../components/ui/button";
 import { Link } from 'react-router-dom';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
 // create json object for country state and city data
 
 export default function CoutryStateDDl() {

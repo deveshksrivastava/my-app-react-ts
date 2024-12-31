@@ -18,7 +18,7 @@ const Header = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.clear();
-    // navigate('/login', { replace: true });
+    navigate('/login', { replace: true });
     setMenuVisible(false);
   };
   const currentPath = useLocation().pathname;
@@ -49,14 +49,52 @@ const Header = () => {
       title: 'Product-new',
       path: '/product-new',
       dropdown: [
-        { label: `${t("serviced1")}`, title: 'Registration', path: '/register' },
-        { label: `${t("serviced1")}`, title: 'ddlcountrystate', path: '/ddlcountrystate' },
-        { label: `${t("serviced1")}`, title: 'RegistrationNew', path: '/registeration-new' },
-        { label: `${t("serviced1")}`, title: 'Registration2', path: '/registeration2' },
-        { label: `${t("serviced1")}`, title: 'netflix', path: '/netflix' },
-        { label: `${t("serviced1")}`, title: 'ToDo', path: '/todoapp' },
-        { label: `${t("serviced1")}`, title: 'Todoappjune', path: '/todoappjune' },
-        { label: `${t("serviced1")}`, title: 'embedededpage', path: '/embedededpage' },
+        {
+          label: `${t("serviced1")}`,
+          title: 'Interview 1',
+          path: '/register'
+        },
+        {
+          label: `${t("serviced2")}`,
+          title: 'Interview 2',
+          path: '/service/data-upload'
+        }, {
+          label: `${t("serviced1")}`,
+          title: 'Interview 1',
+          path: '/service/advance-analytics-enviroment'
+        },
+        {
+          label: `${t("serviced2")}`,
+          title: 'Interview 2',
+          path: '/service/data-upload'
+        }, {
+          label: `${t("serviced1")}`,
+          title: 'Interview 1',
+          path: '/service/advance-analytics-enviroment'
+        },
+        {
+          label: `${t("serviced2")}`,
+          title: 'Interview 2',
+          path: '/service/data-upload'
+        }, {
+          label: `${t("serviced1")}`,
+          title: 'Interview 1',
+          path: '/service/advance-analytics-enviroment'
+        },
+        {
+          label: `${t("serviced2")}`,
+          title: 'Interview 2',
+          path: '/service/data-upload'
+        }, {
+          label: `${t("serviced1")}`,
+          title: 'Interview 1',
+          path: '/service/advance-analytics-enviroment'
+        },
+        {
+          label: `${t("serviced2")}`,
+          title: 'Interview 2',
+          path: '/service/data-upload'
+        }
       ]
     },
     {
@@ -64,28 +102,151 @@ const Header = () => {
       title: 'Service',
       path: '#',
       dropdown: [
-        { label: `${t("serviced1")}`, title: 'Advance Analytics ', path: '/service/advance-analytics-enviroment' },
-        { label: `${t("serviced1")}`, title: 'Data Uplaod', path: '/service/data-upload' },
-        { label: `${t("serviced1")}`, title: 'DataSet', path: '/datasets' },
-        { label: `${t("serviced1")}`, title: 'Product', path: '/product' },
+        {
+          label: `${t("serviced1")}`,
+          title: 'Interview 1',
+          path: '/form-create'
+        },
+        {
+          label: `${t("serviced2")}`,
+          title: 'Request Data Upload',
+          path: '/service/data-upload'
+        },
+        {
+          label: `${t("serviced2")}`,
+          title: 'Request Data Upload',
+          path: '/service/data-upload'
+        },
+        {
+          label: `${t("serviced2")}`,
+          title: 'Request Data Upload',
+          path: '/service/data-upload'
+        },
+        {
+          label: `${t("serviced2")}`,
+          title: 'Request Data Upload',
+          path: '/service/data-upload'
+        },
       ]
-    },
-    {
-      label: `${t("product")}`,
-      title: 'Productsdskdjksjk',
-      path: '/product'
     },
     {
       label: `${t("Help")}`,
       title: 'Help',
       path: '#',
       dropdown: [
-        { label: `${t("helpd1")}`, title: 'About US', path: '/help/about-us' },
-        { label: `${t("helpd2")}`, title: 'Report Issue ', path: '/help/report-a-us-issue' },
-        { label: `${t("helpd3")}`, title: 'FAQS', path: '/help/faqs' },
-        { label: `${t("serviced1")}`, title: 'Product', path: '/product' },
+        {
+          label: `${t("helpd1")}`,
+          title: 'About US',
+          path: '/help/about-us'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'Report a US issue',
+          path: '/help/report-a-us-issue'
+        },
+        {
+          label: `${t("helpd3")}`,
+          title: 'FAQS',
+          path: '/help/faqs'
+        }
+        ,
+        {
+          label: `${t("helpd3")}`,
+          title: 'FAQS',
+          path: '/help/faqs'
+        }, {
+          label: `${t("helpd1")}`,
+          title: 'About US',
+          path: '/help/about-us'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'Report a US issue',
+          path: '/help/report-a-us-issue'
+        },
+        {
+          label: `${t("helpd3")}`,
+          title: 'FAQS',
+          path: '/help/faqs'
+        }
+        ,
+        {
+          label: `${t("helpd3")}`,
+          title: 'FAQS',
+          path: '/help/faqs'
+        }, {
+          label: `${t("helpd1")}`,
+          title: 'About US',
+          path: '/help/about-us'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'Report a US issue',
+          path: '/help/report-a-us-issue'
+        },
+        {
+          label: `${t("helpd3")}`,
+          title: 'FAQS',
+          path: '/help/faqs'
+        }
+        ,
+        {
+          label: `${t("helpd3")}`,
+          title: 'FAQS',
+          path: '/help/faqs'
+        }
       ]
     },
+    // {
+    //   label:`${t("Contact-Us")}`,
+    //   title: 'Contact Us',
+    //   path: '/contact',
+    //   dropdown: undefined
+    // },
+    {
+      label: `${t("Datasets")}`,
+      title: 'Datasets',
+      path: '/datasets',
+      dropdown: undefined
+    },
+    {
+      label: `${t("Product")}`,
+      title: 'Product',
+      path: '/product',
+      dropdown: undefined
+    },
+    {
+      label: `${t("Interview")}`,
+      title: 'Interview',
+      path: '/interview',
+      dropdown: [
+        {
+          label: `${t("helpd1")}`,
+          title: 'Create-Form',
+          path: '/interview/create-form'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'Google Calendar',
+          path: '/interview/google-calendar'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'Ms Excel',
+          path: '/interview/ms-excel'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'Google Auto text',
+          path: '/interview/google-auto-text'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'Progress Bar',
+          path: '/interview/progress-bar'
+        },
+      ]
+    }
 
   ];
   const [menuVisible, setMenuVisible] = useState(false);
@@ -149,8 +310,8 @@ const Header = () => {
     };
   }, []);
   return (
-    <div className=" justify-between bg-white shadow-md h-15 " onClick={togglePopup} >
-      <div className="flex lg:items-start  justify-between px-2 py-2 items-center">
+    <div className=" justify-between bg-slate-100 shadow-md h-15 " onClick={togglePopup} >
+      <div className="flex lg:items-start justify-between px-2 py-2 items-center">
         <img src="/asserts/img/mso-gap.png" className="md:w-40 w-20" alt="Logo" />
 
         <div className="mr-4 flex gap-4 items-center" >
@@ -199,58 +360,59 @@ const Header = () => {
             </div>
           )}
         </div>
-        <div className=" flex bg-site-color px-2 py-2  justify-center items-center" id="navbar" ref={dropdownRef}>
-          <ul className="flex md:p-0 md:flex-row md:space-x-8 mt-0 mb-[3px] lg:flex-nowrap flex-wrap md:gap-0  gap-3">
-            {/* <NavLinkTag title={link.title} path={link.path} dropdown={link.dropdown} onClick={link.onClick}/>  */}
-            {navLinks.map((link, index) => (
-              <>
-                <li key={index} onClick={() => handleItemtitleClick(link.title)}>
-                  <NavLink
-                    to={`${link.path}`}
-                    className={`${currentPath === link.path && clickedLabel === link.title
-                      ? 'border-b-[4px] p-2  border-b-zinc-100 hover:text-white  bg-black bg-opacity-50 text-white'
-                      : clickedLabel === link.title && currentPath !== link.path
+        <div className=''>
+          <div className=" flex bg-site-color px-2 py-2  justify-center items-center" id="navbar" ref={dropdownRef} >
+            <ul className="flex md:p-0 md:flex-row md:space-x-8 mt-0 mb-[3px] lg:flex-nowrap flex-wrap md:gap-0  gap-3 ">
+              {/* <NavLinkTag title={link.title} path={link.path} dropdown={link.dropdown} onClick={link.onClick}/>  */}
+              {navLinks.map((link, index) => (
+                <>
+                  <li key={index} onClick={() => handleItemtitleClick(link.title)}>
+                    <NavLink
+                      to={`${link.path}`}
+                      className={`${currentPath === link.path && clickedLabel === link.title
                         ? 'border-b-[4px] p-2  border-b-zinc-100 hover:text-white  bg-black bg-opacity-50 text-white'
-                        : 'p-2 text-white hover:border-b-[4px]  hover:bg-black hover:bg-opacity-50 border-b-zinc-100 hover:text-white transition duration-10000 ease-in-out'
-                      }`}
-                  >
-                    {link.label}
-                  </NavLink>
-
-                  {link.dropdown && (
-                    <div
-                      className={` bg-menu-bar p-6  absolute mt-[10px] -mr-20 grid grid-cols-3 gap-4  shadow-lg rounded-lg z-10 
-                         ${isDropdownOpen && clickedLabel === link.title ? '' : 'hidden'}`}
+                        : clickedLabel === link.title && currentPath !== link.path
+                          ? 'border-b-[4px] p-2  border-b-zinc-100 hover:text-white  bg-black bg-opacity-50 text-white'
+                          : 'p-2 text-white hover:border-b-[4px]  hover:bg-black hover:bg-opacity-50 border-b-zinc-100 hover:text-white transition duration-10000 ease-in-out'
+                        }`}
                     >
-                      {link.dropdown.map((subNavLink, index) => (
-                        // <div
-                        //   key={index}
-                        //   className={`relative item-start ${activeIndex === index && clickedNavLabel === subNavLink.title && 'hover:text-white  bg-black bg-opacity-50 text-white'} `}
-                        // >
-                        //   {subNavLink.path !== undefined && (
-                        //     <section
-                        //       className={`text-center ${clickedLabel === 'Service' ? 'mr-[200px]' : clickedLabel === 'Help' ? 'mr-10' : ''}  underline cursor-pointer py-3 text-red-500 `}
-                        //       onClick={() => handleItemClick(subNavLink.title, index)} // Assuming you have a function to handle subitem clicks
-                        //     >
-                        //       <Link to={`${subNavLink.path}`} className={`p-2  text-black `}>
-                        //         {subNavLink.label}
-                        //       </Link>
-                        //     </section>
-                        //   )}
-                        // </div>
-                        <div className=' items-center '>
-                          <Link to={`${subNavLink.path}`} className={`p-2  text-black `}>
-                            {subNavLink.title}
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </li>
-              </>
-            ))}
+                      {link.label}
+                    </NavLink>
 
-          </ul>
+                    {link.dropdown && (
+                      <div
+                        className={` w-full absolute left-0 mt-[10px] bg-white shadow-lg z-10 grid grid-cols-3 gap-1 ${isDropdownOpen && clickedLabel === link.title ? '' : 'hidden'}`}
+                      >
+                        {link.dropdown.map((subNavLink, index) => (
+                          // <div
+                          //   key={index}
+                          //   className={`relative item-start ${activeIndex === index && clickedNavLabel === subNavLink.title && 'hover:text-white  bg-black bg-opacity-50 text-white'} `}
+                          // >
+                          //   {subNavLink.path !== undefined && (
+                          //     <section
+                          //       className={`text-center ${clickedLabel === 'Service' ? 'mr-[200px]' : clickedLabel === 'Help' ? 'mr-10' : ''}  underline cursor-pointer py-3 text-red-500 `}
+                          //       onClick={() => handleItemClick(subNavLink.title, index)} // Assuming you have a function to handle subitem clicks
+                          //     >
+                          //       <Link to={`${subNavLink.path}`} className={`p-2  text-black `}>
+                          //         {subNavLink.label}
+                          //       </Link>
+                          //     </section>
+                          //   )}
+                          // </div>
+                          <div className='text-center'>
+                            <Link to={`${subNavLink.path}`} className={`p-2  text-black `}>
+                              {subNavLink.title}
+                            </Link>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                </>
+              ))}
+
+            </ul>
+          </div>
         </div>
       </div>
     </div>

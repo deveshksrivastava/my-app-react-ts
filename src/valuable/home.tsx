@@ -9,7 +9,7 @@ const Home = () => {
   return <>
     <LayoutWrapper
       coverImage={'/asserts/img/bg.jpg'}
-      //  layoutTitle="Welcome to National Grid ESO Data & Analytics Platform"
+      //  layoutTitle="Welcome to National Platform"
       layoutTitle={t("layoutTitle")}
     >
       <div className='flex flex-col justify-items-center gap-[2rem] items-center w-full'>

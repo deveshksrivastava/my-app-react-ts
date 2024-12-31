@@ -20,13 +20,18 @@ import DataSets from './valuable/datasets';
 import i18n from './i18n';
 import Product from './valuable/product';
 import ProductNew from './valuable/product-new';
-import RegistrationNew from './2024-June_Interview-prep/registation';
-import Regestration1 from './2024-June_Interview-prep/Regestration1';
-import Registration2 from './2024-June_Interview-prep/Registration2';
-import { TodoApp } from './2024-June_Interview-prep/TodoApp';
-import { TodoAppJune } from './2024-June_Interview-prep/TodoApp-july24'
-import { Netflix } from './2024-June_Interview-prep/Netflix';
-import CoutryStateDDl from './2024-June_Interview-prep/performance/skills/country-state';
+import RegistrationNew from './interview-2024/registation';
+import Regestration1 from './interview-2024/Regestration1';
+import Registration2 from './interview-2024/Registration2';
+import { TodoApp } from './interview-2024/TodoApp';
+import { TodoAppJune } from './interview-2024/TodoApp-july24'
+import { Netflix } from './interview-2024/Netflix';
+import CoutryStateDDl from './interview-2025/skills/country-state';
+import FormCreation from './interview-2024/Test1-Create-form4';
+import GoolgeCalender from './interview-2024/Test2-GooogleCalender2';
+import MSExcel from './interview-2024/Test3-MS-Excel3';
+import GooogleAutoText from './interview-2024/Test4.GoogleAutoText';
+import ProgressBar from './interview-2024/Test5-Propress-bar';
 
 
 const AppLayout = () => {
@@ -54,12 +59,17 @@ const AppLayout = () => {
           <Route path="/product" element={<Protected> <Product /></Protected>} />
           <Route path="/product-new" element={<Protected> <ProductNew /></Protected>} />
           <Route path="/registeration" element={<Protected> <Regestration1 /></Protected>} />
-          <Route path="/register" element={<Protected> <Registration /></Protected>} />
           <Route path="/ddlcountrystate" element={<Protected> <CoutryStateDDl /></Protected>} />
           <Route path="/registeration-new" element={<Protected> <RegistrationNew /></Protected>} />
           <Route path="/registeration2" element={<Protected> <Registration2 /></Protected>} />
           <Route path="/todoapp" element={<Protected> <TodoApp /></Protected>} />
           <Route path="/netflix" element={<Protected> <Netflix /></Protected>} />
+          <Route path="/interview/create-form" element={<Protected><FormCreation /></Protected>} />
+          <Route path="/interview/google-calendar" element={<Protected><GoolgeCalender /></Protected>} />
+          <Route path="/interview/ms-excel" element={<Protected><MSExcel /></Protected>} />
+          <Route path="/interview/google-auto-text" element={<Protected><GooogleAutoText /></Protected>} />
+          <Route path="/interview/progress-bar" element={<Protected><ProgressBar /></Protected>} />
+          <Route path="/register" element={<Protected><Registration /></Protected>} />
           <Route path="/todoappjune" element={<Protected> <TodoAppJune /></Protected>} />
           <Route path="/embedededpage" element={<Protected> <EmbeddedPage /></Protected>} />
           <Route path="*" element={<Protected> <Error /></Protected>} />
@@ -87,5 +97,10 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <AppLayout />
+    {/* <RegistrationNew /> */}
+    {/* <Registration2 />
+    <TodoApp />
+    <Netflix /> */}
+    {/* <TodoAppJune /> */}
   </React.StrictMode>
 );
