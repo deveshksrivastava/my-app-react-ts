@@ -32,6 +32,8 @@ import GoolgeCalender from './interview-2024/Test2-GooogleCalender2';
 import MSExcel from './interview-2024/Test3-MS-Excel3';
 import GooogleAutoText from './interview-2024/Test4.GoogleAutoText';
 import ProgressBar from './interview-2024/Test5-Propress-bar';
+import RegistrationCurd from './interview-2025/registration-curd';
+import AppBootstrap from './interview-2025/performance/app-backup';
 
 
 const AppLayout = () => {
@@ -42,11 +44,10 @@ const AppLayout = () => {
     }
   }, []);
   return (
-    <div className="relative min-h-[100vh]">
+    <div className="">
       {/* <Header /> */}
       <Router>
         <Routes>
-
           {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/" element={<Protected> <Home /></Protected>} />
           <Route path="/help" element={<Protected> <Help /></Protected>} />
@@ -58,10 +59,13 @@ const AppLayout = () => {
           <Route path="/datasets" element={<Protected> <DataSets /></Protected>} />
           <Route path="/product" element={<Protected> <Product /></Protected>} />
           <Route path="/product-new" element={<Protected> <ProductNew /></Protected>} />
+          <Route path="/register" element={<Protected><Registration /></Protected>} />
+          <Route path="/registrationcurd" element={<Protected> <RegistrationCurd /></Protected>} />
           <Route path="/registeration" element={<Protected> <Regestration1 /></Protected>} />
           <Route path="/ddlcountrystate" element={<Protected> <CoutryStateDDl /></Protected>} />
           <Route path="/registeration-new" element={<Protected> <RegistrationNew /></Protected>} />
           <Route path="/registeration2" element={<Protected> <Registration2 /></Protected>} />
+          <Route path="/registeration1" element={<Protected> <Regestration1 /></Protected>} />
           <Route path="/todoapp" element={<Protected> <TodoApp /></Protected>} />
           <Route path="/netflix" element={<Protected> <Netflix /></Protected>} />
           <Route path="/interview/create-form" element={<Protected><FormCreation /></Protected>} />
@@ -69,8 +73,8 @@ const AppLayout = () => {
           <Route path="/interview/ms-excel" element={<Protected><MSExcel /></Protected>} />
           <Route path="/interview/google-auto-text" element={<Protected><GooogleAutoText /></Protected>} />
           <Route path="/interview/progress-bar" element={<Protected><ProgressBar /></Protected>} />
-          <Route path="/register" element={<Protected><Registration /></Protected>} />
-          <Route path="/todoappjune" element={<Protected> <TodoAppJune /></Protected>} />
+          <Route path="/todoappjune" element={<Protected><TodoAppJune /></Protected>} />
+          <Route path="/appbootstrap" element={<Protected><AppBootstrap /></Protected>} />
           <Route path="/embedededpage" element={<Protected> <EmbeddedPage /></Protected>} />
           <Route path="*" element={<Protected> <Error /></Protected>} />
         </Routes>
@@ -102,5 +106,6 @@ root.render(
     <TodoApp />
     <Netflix /> */}
     {/* <TodoAppJune /> */}
+    {/* <RegistrationCurd /> */}
   </React.StrictMode>
 );

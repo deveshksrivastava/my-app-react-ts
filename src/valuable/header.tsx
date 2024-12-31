@@ -51,50 +51,84 @@ const Header = () => {
       dropdown: [
         {
           label: `${t("serviced1")}`,
-          title: 'Interview 1',
+          title: 'Registeration1',
+          path: '/registeration1'
+        },
+        {
+          label: `${t("serviced1")}`,
+          title: 'Registeration2',
           path: '/register'
         },
         {
           label: `${t("serviced2")}`,
-          title: 'Interview 2',
-          path: '/service/data-upload'
-        }, {
-          label: `${t("serviced1")}`,
-          title: 'Interview 1',
-          path: '/service/advance-analytics-enviroment'
+          title: 'RegistrationCurd',
+          path: '/registrationcurd'
         },
         {
-          label: `${t("serviced2")}`,
-          title: 'Interview 2',
-          path: '/service/data-upload'
-        }, {
           label: `${t("serviced1")}`,
-          title: 'Interview 1',
-          path: '/service/advance-analytics-enviroment'
+          title: 'CoutryStateDDl',
+          path: '/ddlcountrystate'
         },
         {
-          label: `${t("serviced2")}`,
-          title: 'Interview 2',
-          path: '/service/data-upload'
-        }, {
           label: `${t("serviced1")}`,
-          title: 'Interview 1',
-          path: '/service/advance-analytics-enviroment'
+          title: 'RegistrationNew',
+          path: '/registeration-new'
         },
         {
-          label: `${t("serviced2")}`,
-          title: 'Interview 2',
-          path: '/service/data-upload'
-        }, {
           label: `${t("serviced1")}`,
-          title: 'Interview 1',
-          path: '/service/advance-analytics-enviroment'
+          title: 'Registration2',
+          path: '/registeration2'
         },
         {
-          label: `${t("serviced2")}`,
-          title: 'Interview 2',
-          path: '/service/data-upload'
-        }
+          label: `${t("serviced1")}`,
+          title: 'TodoApp',
+          path: '/todoapp'
+        },
+        {
+          label: `${t("serviced1")}`,
+          title: 'Netflix',
+          path: '/netflix'
+        },
+        {
+          label: `${t("helpd1")}`,
+          title: 'Create-Form',
+          path: '/interview/create-form'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'Google Calendar',
+          path: '/interview/google-calendar'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'Ms Excel',
+          path: '/interview/ms-excel'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'Google Auto text',
+          path: '/interview/google-auto-text'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'Progress Bar',
+          path: '/interview/progress-bar'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'EmbeddedPage',
+          path: '/embedededpage'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'TodoAppJune',
+          path: '/todoappjune'
+        },
+        {
+          label: `${t("helpd2")}`,
+          title: 'AppBootstrap',
+          path: '/appbootstrap'
+        },
       ]
     },
     {
@@ -129,80 +163,7 @@ const Header = () => {
         },
       ]
     },
-    {
-      label: `${t("Help")}`,
-      title: 'Help',
-      path: '#',
-      dropdown: [
-        {
-          label: `${t("helpd1")}`,
-          title: 'About US',
-          path: '/help/about-us'
-        },
-        {
-          label: `${t("helpd2")}`,
-          title: 'Report a US issue',
-          path: '/help/report-a-us-issue'
-        },
-        {
-          label: `${t("helpd3")}`,
-          title: 'FAQS',
-          path: '/help/faqs'
-        }
-        ,
-        {
-          label: `${t("helpd3")}`,
-          title: 'FAQS',
-          path: '/help/faqs'
-        }, {
-          label: `${t("helpd1")}`,
-          title: 'About US',
-          path: '/help/about-us'
-        },
-        {
-          label: `${t("helpd2")}`,
-          title: 'Report a US issue',
-          path: '/help/report-a-us-issue'
-        },
-        {
-          label: `${t("helpd3")}`,
-          title: 'FAQS',
-          path: '/help/faqs'
-        }
-        ,
-        {
-          label: `${t("helpd3")}`,
-          title: 'FAQS',
-          path: '/help/faqs'
-        }, {
-          label: `${t("helpd1")}`,
-          title: 'About US',
-          path: '/help/about-us'
-        },
-        {
-          label: `${t("helpd2")}`,
-          title: 'Report a US issue',
-          path: '/help/report-a-us-issue'
-        },
-        {
-          label: `${t("helpd3")}`,
-          title: 'FAQS',
-          path: '/help/faqs'
-        }
-        ,
-        {
-          label: `${t("helpd3")}`,
-          title: 'FAQS',
-          path: '/help/faqs'
-        }
-      ]
-    },
-    // {
-    //   label:`${t("Contact-Us")}`,
-    //   title: 'Contact Us',
-    //   path: '/contact',
-    //   dropdown: undefined
-    // },
+
     {
       label: `${t("Datasets")}`,
       title: 'Datasets',
@@ -216,38 +177,11 @@ const Header = () => {
       dropdown: undefined
     },
     {
-      label: `${t("Interview")}`,
-      title: 'Interview',
-      path: '/interview',
-      dropdown: [
-        {
-          label: `${t("helpd1")}`,
-          title: 'Create-Form',
-          path: '/interview/create-form'
-        },
-        {
-          label: `${t("helpd2")}`,
-          title: 'Google Calendar',
-          path: '/interview/google-calendar'
-        },
-        {
-          label: `${t("helpd2")}`,
-          title: 'Ms Excel',
-          path: '/interview/ms-excel'
-        },
-        {
-          label: `${t("helpd2")}`,
-          title: 'Google Auto text',
-          path: '/interview/google-auto-text'
-        },
-        {
-          label: `${t("helpd2")}`,
-          title: 'Progress Bar',
-          path: '/interview/progress-bar'
-        },
-      ]
+      label: `${t("Contact-Us")}`,
+      title: 'Contact Us',
+      path: '/contact',
+      dropdown: undefined
     }
-
   ];
   const [menuVisible, setMenuVisible] = useState(false);
 
@@ -399,8 +333,8 @@ const Header = () => {
                           //     </section>
                           //   )}
                           // </div>
-                          <div className='text-center'>
-                            <Link to={`${subNavLink.path}`} className={`p-2  text-black `}>
+                          <div className='text-left ml-40'>
+                            <Link to={`${subNavLink.path}`} className={`p-2   hover:text-blue-800 hover:text-lg hover:font-bold`}>
                               {subNavLink.title}
                             </Link>
                           </div>
