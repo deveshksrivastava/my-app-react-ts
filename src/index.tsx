@@ -9,7 +9,6 @@ import Contact from './valuable/contact';
 import Services from './valuable/service';
 import Help from './valuable/help';
 import Registration from './registration';
-// import Login from './app';
 import Protected from './auth/protected';
 import Header from './valuable/header';
 import Profile from './valuable/profile';
@@ -34,6 +33,9 @@ import GooogleAutoText from './interview-2024/Test4.GoogleAutoText';
 import ProgressBar from './interview-2024/Test5-Propress-bar';
 import RegistrationCurd from './interview-2025/registration-curd';
 import AppBootstrap from './interview-2025/performance/app-backup';
+import MyLogin from './MyLogin';
+import LoginNetflix from './components/netflix/login';
+import RegistrationFormWithFormik from './interview-2025/RegistrationwithFormik';
 
 
 const AppLayout = () => {
@@ -50,6 +52,9 @@ const AppLayout = () => {
         <Routes>
           {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/" element={<Protected> <Home /></Protected>} />
+          <Route path="/login" element={<MyLogin />} />
+          <Route path="/netflixlogin" element={<LoginNetflix />} />
+          <Route path="/registration-formik" element={<Protected><RegistrationFormWithFormik /></Protected>} />
           <Route path="/help" element={<Protected> <Help /></Protected>} />
           <Route path="/help/:id" element={<Protected> <Regestration1 /></Protected>} />
           <Route path="/service" element={<Protected> <Services /></Protected>} />
@@ -79,7 +84,7 @@ const AppLayout = () => {
           <Route path="*" element={<Protected> <Error /></Protected>} />
         </Routes>
       </Router>
-    </div>
+    </div >
   );
 };
 

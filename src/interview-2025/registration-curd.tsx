@@ -19,7 +19,7 @@ export default function RegistrationCurd() {
 
     const addHandler = () => {
         console.log('add', users)
-        const newUser = { id: Math.random(), name: `Example Name - ${Math.random()}`, city: `Example City - ${Math.random()}` }
+        const newUser = { id: Math.random(), name: `Example ${name} - ${Math.random()}`, city: `Example ${city} - ${Math.random()}` }
         setUsers([...users, newUser])
     }
     const deleteHandler = (id: number) => {
@@ -29,6 +29,8 @@ export default function RegistrationCurd() {
     const updateHandler = (id: number, name: string, city: string) => {
         console.log('update', id, name, city)
         if (!name || !city) return
+        setName(name)
+        setCity(city)
         const temp = users.map(item => {
             if (item.id === id) {
                 return {
@@ -51,13 +53,12 @@ export default function RegistrationCurd() {
         setUsers(temp)
     }
     return (
-        <div>
-            <h1>Registration</h1>
-            <button onClick={addHandler} className='bg-blue-500 p-2 rounded-md'>Add</button><br />
+        <div className='mx-auto max-w-5xl'>
+            <h1 className='mt-12 font-extrabold underline mb-6 text-3xl'>Registration</h1>
             <hr />
-            NAME: <input type="text" name="name" onChange={(e) => setName(e.target.value)} className='m-2 bg-slate-300' />
-            CITY : <input type="text" name="city" onChange={(e) => setCity(e.target.value)} className='m-2 bg-slate-300' />
-
+            NAME: <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} className='m-2 bg-slate-300' />
+            CITY : <input type="text" name="city" value={city} onChange={(e) => setCity(e.target.value)} className='m-2 bg-slate-300' />
+            <button onClick={addHandler} className='bg-blue-500 p-2 rounded-md'>Add</button><br />
             <div >
                 <div className='flex gap-4 bg-gray-200 border m-2 p-2'>
                     <div className='w-60'>ID</div>
@@ -67,15 +68,13 @@ export default function RegistrationCurd() {
                     <div className='w-60'>UPDATE</div>
                 </div>
                 {users.map((item) => (
-
                     <div className='flex gap-4 bg-gray-200 border m-1 p-1'>
                         <div className='w-60'>{item.id}</div>
                         <div className='w-80'>{item.name}</div>
                         <div className='w-60'>{item.city}</div>
                         <div className='w-60'><span onClick={() => deleteHandler(item.id)} className='bg-blue-500 p-1 rounded-md'>delete</span></div>
-                        <div className='w-60'><span onClick={() => updateHandler(item.id, name, city)} className='bg-blue-500 p-1 rounded-md'>update</span></div>
+                        <div className='w-60'><span onClick={() => updateHandler(item.id, item.name, item.city)} className='bg-blue-500 p-1 rounded-md'>update</span></div>
                     </div>
-
                 ))}
             </div>
             <hr />

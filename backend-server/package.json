@@ -1,0 +1,23 @@
+{
+  "name": "backend-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "body-parser": "^1.18.2",
+    "mongoose": "^5.0.16",
+    "mysql": "^2.18.1",
+    "rest": "^2.0.0",
+    "yup": "^0.29.3"
+  }
+}

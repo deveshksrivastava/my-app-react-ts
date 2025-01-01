@@ -7,21 +7,27 @@ import { useMsal } from '@azure/msal-react';
 const MyLogin = () => {
   const { instance } = useMsal();
   const navigate = useNavigate();
-  const handleLogin = () => {
-    instance.loginPopup().then(response => {
-      console.log(response);
-      localStorage.setItem('token', JSON.stringify(response));
-      navigate('/', { replace: true });
-    });
+  const handleLoginMSAL = () => {
+    // instance.loginPopup().then(response => {
+    //   console.log(response);
+    //   localStorage.setItem('token', JSON.stringify(response));
+    //   navigate('/', { replace: true });
+    // });
+    console.log('login')
+    navigate('/netflixlogin', { replace: true });
   };
-  const handleChange = () => {};
+  const handleChange = () => { };
+
+  const handleLogin = () => {
+    navigate('/', { replace: true });
+  }
   return (
     <>
       <div className="flex max-w-sm mt-4 m-auto bg-gray-100 flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm text-center">
           <img
             className="mx-auto h-10 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+            src="/asserts/img/mso-gap.png"
             alt="Your Company"
           />
           <h2 className="mt-4 text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
@@ -31,7 +37,7 @@ const MyLogin = () => {
           <CustomButton
             text="Login by Microsoft"
             classname="flex w-full justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
-            onClick={handleLogin}
+            onClick={handleLoginMSAL}
           />
 
           <p className="text-center my-3">Or</p>
@@ -66,6 +72,7 @@ const MyLogin = () => {
               text="Login"
               classname="flex w-full justify-center items-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               icon={<FaAngleRight />}
+              onClick={handleLogin}
             />
           </form>
 

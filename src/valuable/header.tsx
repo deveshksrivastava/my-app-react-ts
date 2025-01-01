@@ -56,13 +56,18 @@ const Header = () => {
         },
         {
           label: `${t("serviced1")}`,
-          title: 'Registeration2',
-          path: '/register'
+          title: 'RegistrationNew',
+          path: '/registeration-new'
         },
         {
           label: `${t("serviced2")}`,
           title: 'RegistrationCurd',
           path: '/registrationcurd'
+        },
+        {
+          label: `${t("serviced2")}`,
+          title: 'Registration Formik',
+          path: '/registration-formik'
         },
         {
           label: `${t("serviced1")}`,
@@ -71,9 +76,10 @@ const Header = () => {
         },
         {
           label: `${t("serviced1")}`,
-          title: 'RegistrationNew',
-          path: '/registeration-new'
+          title: 'Registeration2',
+          path: '/register'
         },
+
         {
           label: `${t("serviced1")}`,
           title: 'Registration2',

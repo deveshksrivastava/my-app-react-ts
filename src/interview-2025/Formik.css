@@ -1,0 +1,20 @@
+.App {
+    text-align: center;
+    max-width: 300px;
+    margin: auto;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form label {
+    text-align: start;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    text-align: start;
+  }
