@@ -27,7 +27,7 @@ app.post('/register', async (req, res) => {
 });
 
 ```
-
+sample
 ```
 RUN - node index.js
 
