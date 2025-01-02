@@ -4,7 +4,7 @@ var ObjectId = require('mongoose').Types.ObjectId;
 
 var { Employee } = require('../models/employee');
 
-// GET ALL => localhost:3000/employees/
+// GET ALL => localhost:5000/employees/
 router.get('/', (req, res) => {
     Employee.find((err, docs) => {
         if (!err) { res.send(docs); }
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// GET SPECIFIC => localhost:3000/employees/{id}
+// GET SPECIFIC => localhost:5000/employees/{id}
 router.get('/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// ADD NEW => localhost:3000/employees/
+// ADD NEW => localhost:5000/employees/
 router.post('/', (req, res) => {
     var emp = new Employee({
         name: req.body.name,
@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// UPDATE => localhost:3000/employees/{id}
+// UPDATE => localhost:5000/employees/{id}
 router.put('/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
@@ -54,7 +54,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-// DELETE RECORD => localhost:3000/employees/{id}
+// DELETE RECORD => localhost:5000/employees/{id}
 router.delete('/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);

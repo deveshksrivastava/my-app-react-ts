@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-
+// Import dotenv to load environment variables
+require('dotenv').config();
 // Replace with your MongoDB connection string
-const uri = 'mongodb+srv://devesh:admin12345@cluster0.ffxxt.mongodb.net/sample_mflix?retryWrites=true&w=majority';
+const uri = process.env.DB_MONGO_URL;
 
 // Options for the connection
 const options = {
