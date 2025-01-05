@@ -1,6 +1,9 @@
 ## BIG PROJECT RESAERCH
 https://github.com/TheKinrar/instances/tree/7c9f686af31f4333c72280bf763ca4d883868847  JavaScript  star (241) fock(25)
 
+## Use of Featch and Axio reqeust
+https://www.syncfusion.com/blogs/post/axios-vs-fetch-choose-right-http-client?ref=dailydev
+
 ````
 // Example route to create a new user
 app.post('/users', async (req, res) => {

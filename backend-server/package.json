@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
+    "learn": "nodemon src/learn-javascript/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -15,7 +16,10 @@
     "body-parser": "^1.18.2",
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "joi": "^17.13.3",
     "mongoose": "^5.0.16",
+    "msnodesqlv8": "^4.4.0",
+    "mssql": "^11.0.1",
     "mysql": "^2.18.1",
     "mysql2": "^3.12.0",
     "rest": "^2.0.0",
