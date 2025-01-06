@@ -3,6 +3,7 @@ const { forEach } = require("lodash");
 const arr_str = ["indian", "USA", "UK"]
 const arr_num = [10, 20, 30, 40, 50];
 const arr_str_obj = [{ name: 'John', age: 20 }, { name: 'Aane', age: 30 }, { name: 'Bane', age: 80 }];
+const arr_str_obj1 = [{ name: 'John', age: 20 }, { name: 'Aane', age: 30 }, { name: 'Bane', age: 80, address: { city: 'delhi' } }];
 const arr_str_obj_deep = [{ name: 'John', age: 20 }, { name: 'Aane', age: 30, address: { city: 'Mumbai' } }, { name: 'Bane', age: 80 }];
 
 console.log(arr_num)
@@ -12,7 +13,8 @@ arr_num.pop()//pop
 arr_num.unshift(200)//unshift
 arr_num.shift()//shift
 arr_num.length //length//3 **
-arr_num.includes(30) //includes//true **
+arr_num.includes(30) //includes//true ** //includes works for primitive values (e.g., strings, numbers), not objects. For example:
+const result = arr_str_obj.find(obj => obj.name === 'Aane'); //help to find on the object array{ name: 'Aane', age: 30 }
 arr_num.indexOf(30, 0) //indexof//2 **
 arr_num.slice(0, 2) //slice **
 console.log('splice', arr_num.splice(2, 4, 99))//** splice, adding the value after removing 20,30
@@ -138,3 +140,30 @@ const newnewObjAray = arr_str_obj_deep.map(item => {
 
 console.log(arr_num)
 // Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.
+
+
+// UPDATETING OBEJCT
+
+
+// const newobj = arr_str_obj1.map(item => {
+//     if (item.name === 'Bane') {
+//         return {
+//             ...item,
+//             age: 1000,
+//             address: {
+//                 city: 'Parsi'
+//             },
+//             country: 'India'
+//         }
+
+//     }
+//     return item
+// })
+
+// Find the object and update the city
+// const baneObj = arr_str_obj1.find(obj => obj.name === 'Bane');
+// if (baneObj && baneObj.address) {
+//     baneObj.address.city = 'Mumbai'; // Update the city
+// }
+
+// console.log(newobj)

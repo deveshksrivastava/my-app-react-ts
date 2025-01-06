@@ -79,3 +79,31 @@ for (let i = str.length - 1; i >= 0; i--) {
 
 console.log('Origincal string', str)
 console.log('Reversed string', reversed)
+
+
+// var accept //ok
+// // let error; //SyntaxError: Missing initializer in const declaration
+// // const error; //SyntaxError: Missing initializer in const declaration
+
+// // Fix for const and let``
+// error = 'abc'
+// let error = 'hello'
+
+// var users = 'Trump'
+// let users = 'Trump'
+// users = 'Mank'  //no issue
+
+// const user = 'Alex'
+// user = 'Musk'    //error: TypeError: Assignment to constant variable.
+
+
+// Create a Map to store user roles
+const userRoles = new Map();
+
+// Adding user roles
+userRoles.set(101, 'admin');
+userRoles.set(102, 'editor');
+userRoles.set(103, 'viewer');
+console.log('skdjskdj', userRoles)
+
+
