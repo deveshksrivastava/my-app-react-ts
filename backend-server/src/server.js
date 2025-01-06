@@ -8,8 +8,8 @@ const postgress_router = require('./posgress/users_router'); // Import the datab
 const User = require('./mongodb/models/User'); // Import the User model
 const bodyParser = require('body-parser');
 require("dotenv").config()
-const lession1 = require('./learn-javascript/lession1/object')
 var mysqlRouter = require('./MySql/router')
+var mssqlServerRouter = require('./mssqlserver/usercontroller')
 require('dotenv').config();
 const { Pool } = require('pg');
 
@@ -29,9 +29,10 @@ app.use(express.json());
 app.use(cors()); //cors middle ware 1, execure in order
 app.use(bodyParser.json());
 
-app.use('/mysql', mysqlRouter); //calling mysql database
-app.use('/mongodb', employeeController); // calling mongodb database
-app.use('/posgress', postgress_router); // calling mongodb database
+// app.use('/mysql', mysqlRouter); //calling mysql database
+// app.use('/mongodb', employeeController); // calling mongodb database
+// app.use('/posgress', postgress_router); // calling mongodb database
+// app.use('/mssqlserver', mssqlServerRouter);
 
 //http://localhost:5000/users from postgress
 
