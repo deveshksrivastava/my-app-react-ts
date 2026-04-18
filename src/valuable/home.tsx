@@ -6,39 +6,41 @@ import FileUpload from '../fileUpload';
 
 const Home = () => {
   const { t } = useTranslation();
-  return <>
-    <LayoutWrapper
-      coverImage={'/asserts/img/bg.jpg'}
-      //  layoutTitle="Welcome to National Platform"
-      layoutTitle={t("layoutTitle")}
-    >
-      <div className='flex flex-col justify-items-center gap-[2rem] items-center w-full'>
-        <h4 className="text-4xl font-medium text-center">`{t("mycardtitle")}`</h4>
-        <div className="mt-2 flex gap-6 flex-col">
-          <MyCard
-            cardImg="/asserts/img/analytics.png"
-            cardContent={
-              <>
-                <p className="text-site-color">{t("mycardtitle")}</p>
-                <p>{t("mycarddesc")}</p>
-              </>
-            }
-          />
-          <div className=" border-t-2" />
-          <MyCard
-            cardImg="/asserts/img/analytics.png"
-            cardContent={
-              <>
-                <p className="text-site-color">{t("mycrt1")}</p>
-                <p>{t("mycrtp1")}</p>
-              </>
-            }
-          />
+  return (
+    <>
+      <LayoutWrapper
+        coverImage={'/asserts/img/bg.jpg'}
+        //  layoutTitle="Welcome to Platform"
+        layoutTitle={t('layoutTitle')}
+      >
+        <div className="flex flex-col justify-items-center gap-[2rem] items-center w-full">
+          <h4 className="text-4xl font-medium text-center">`{t('mycardtitle')}`</h4>
+          <div className="mt-2 flex gap-6 flex-col">
+            <MyCard
+              cardImg="/asserts/img/analytics.png"
+              cardContent={
+                <>
+                  <p className="text-site-color">{t('mycardtitle')}</p>
+                  <p>{t('mycarddesc')}</p>
+                </>
+              }
+            />
+            <div className=" border-t-2" />
+            <MyCard
+              cardImg="/asserts/img/analytics.png"
+              cardContent={
+                <>
+                  <p className="text-site-color">{t('mycrt1')}</p>
+                  <p>{t('mycrtp1')}</p>
+                </>
+              }
+            />
+          </div>
+          <FileUpload />
         </div>
-        <FileUpload />
-      </div>
-    </LayoutWrapper>
-  </>
+      </LayoutWrapper>
+    </>
+  );
 };
 
 export default Home;
